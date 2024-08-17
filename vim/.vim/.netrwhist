@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/pie/.config/procps'
+let g:netrw_dirhist_7='/home/pie/.config'
+let g:netrw_dirhist_6='/home/pie/.config/procps'
+let g:netrw_dirhist_5='/home/pie/program/pyvenv'
+let g:netrw_dirhist_4='/usr/share/ppd/cupsfilters'
+let g:netrw_dirhist_3='/etc/cups/ppd'
+let g:netrw_dirhist_2='/home/pie/todo'
+let g:netrw_dirhist_1='/home/pie/.vim/plugged'
