@@ -1,2 +1,0 @@
-{"timestamp":811006392,"category":"nimbus_events","name":"enroll_failed","extra":{"experiment":"recommend-media-extension-add-ons-part-2-existing-user","glean_timestamp":"1723857680373","reason":"feature-conflict"}}
-{"timestamp":818444247,"category":"nimbus_events","name":"exposure","extra":{"experiment":"highlighting-in-pdfs-rollout","branch":"treatment","feature_id":"pdfjs","glean_timestamp":"1723865118228"}}

@@ -1,7 +1,9 @@
 #
 # ~/.bashrc
 #
-
+function cl() {
+	cd "$@" && ls;
+}
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

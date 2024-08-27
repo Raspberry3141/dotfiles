@@ -1,500 +1,500 @@
-mkdir pack
-mkdir cpphighlight
-mkdir start
- git clone --depth=1 https://github.com/bfrg/vim-cpp-modern
-vim
-cd ~
-vim program/array_sum.cpp 
-vim
-cd vim
-ls
-cd .vim
-ls
-rm -rf pack/
-ls
-vim
-cd program/
-ls
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ --version
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-vim .Xresources 
-ls
-ls -a
-cd .config/
-ls
-cd i3status/
-ls
-cd config 
-vim config 
-cd
-cd .config/i3/config 
-vim .config/i3/config 
-vim .config/i3/config 
-vim .config/i3/config 
-LS
-ls -a
-cd .config/
-ls
-cs picom/
-cd picom/
-ls
-vim picom.conf 
-cs picom/
-ls -a
-cd .config/
-ls
-cd picom/
-ls
-vim picom.conf 
-cd .config/
-cd picom/
-vim picom.conf 
-vim program/array_sum.cpp 
-vim program/array_sum.cpp 
-cd program/
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a < 4 5
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ array_sum.cpp -o code.a && ./code.a 
-ls -a
-cd .config/
-ls
-cd systemd/
-ks
-ls
-cd user/
+vim -o cookie 
+systemd-
+systemd
+systemctl 
 ls
 cd ~
+ls
+cd ./.config/pulse/
+cd ./.config/
+ls
+cd ~/.config
+ls
+vim -o procps/
+cd ~
+cd .dotfiles/
+mkdir picom
+mv ~/.config/picom/ ~/.dotfiles/picom/
+ls
+stow picom/
 cd ~
 ls
-cd /
-ls 
-cd etc/
-ls
-cd systemd/
-ls
-vim -o  sleep.conf 
-vim ~/.config/i3/config 
-vim program/array_sum.cpp 
-g++ array_sum.cpp -o code.a && ./code.a 
-g++ ~/program/array_sum.cpp -o code.a && ./code.a 
-vim program/array_sum.cpp 
-g++ ~/program/array_sum.cpp -o code.a && ./code.a 
-vim program/array_sum.cpp 
-g++ ~/program/array_sum.cpp -o code.a && ./code.a 
-vim program/array_sum.cpp 
-pacman --help
-sudo pacman -R pav
-sudo pacman -R pavucontrol
-sudo pacman -S pavucontrol
-pavucontrol 
-vim ~/.config/i3/config 
-XF8
-vim program/array_sum.cpp 
 ls -a
+cd .dotfiles/
 ls
-mkdir todo
-cd todo/
-vim todo
-sudo pacman -S xawtv
-yay -S xawtv
-xawtv -c /dev/video0
-xawtv -c /dev/video0
-yay --help
-yay -R xawtv
-sudo pacman -S VLC
-sudo pacman -S vlc
-$ vlc v4l2://:input-slave=alsa://:v4l-vdev="/dev/video0"
- vlc v4l2://:input-slave=alsa://:v4l-vdev="/dev/video0"
-ls
-tmux --help
-c=1
-rm --help
-sudo pacman -S tmux
-tmux 
-tmux 
-exit
-exit
-exit
-tmux ls
-tmux -ls
-tmux ls
-exit
-tmux ls
 cd ~
-cd ~/.config/
-exit
-tmux ;s
-tmux ls
-vim
-10;rgb:ad00/ad00/ad00]11;rgb:2100/2100/2100
-tmux ls
+cd .dotfiles/
+git init
+git add .
+git commit
+git config --global user.email "masa.namba101@gmail.com"
+git commit
+git config --global user.email "masa.namba101@gmail.com" commit
 ls
-tmux ls
-tmux ;s
-tmux ls
-tmux
-tmux ls
-tmux
-tmux
+ls -a
 cd ~
+ls -a
+cd ~/.dotfiles/
+mkdir git
+mv ~/.gitconfig ~/.dotfiles/git/
 ls
+stow git/
+git remote add origin https://github.com/Raspberry3141/dotfiles.git
+git branch -M main
+git push -u origin main
+
+git remote add origin https://github.com/Raspberry3141/dotfiles.git
+git branch -M main
+git push -u origin main
+git remote -v
+git remote set-url origin https://github.com/Raspberry3141/dotfiles.git
+git push -u origin main
+git fetch origin
+git pull origin main
+git pull origin master
+git branch
+git branch -M main
+git branch
+git branch -r
+git rev-parse --abbrev-ref HEAD
+git checkoout main
+git checkout main
+git init
+git add .
+git commit -m "init"
+git config --global user.name "Raspberry3141"
+git commit -m "init"
+git remote add origin https://github.com/Raspberry3141/dotfiles.git
+git branch -M main
+git push -u origin main
+[200~git remote add origin https://github.com/Raspberry3141/dotfiles.git~
+git remote add origin https://github.com/Raspberry3141/dotfiles.git
+git remote set-url origin https://github.com/Raspberry3141/dotfiles.git
+git branch -M main
+git push -u origin main
+git config --global user.name "Raspberry3141"
+git config l
+git config -l
+git push -u origin main
+git push -u origin main
+git remote add origin git@github.com:Raspberry3141/dotfiles.git
+git branch -M main
+git push -u origin main
+ls
+cd ~
+cd .dotfiles/
+git remote set-url origin git@github.com:Raspberry3141/dotfiles.git
+git branch -M main
+git push -u origin main
+git push -u origin main
+git bran
+git branch
+git commit -m "commit"
+git branch
+git push -u origin main
+sudo pacman -S openssh
+git push -u origin main
+git push -u origin main
+ssh-keygen -t ed25519 -C "masa.namba101@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+git push -u origin main
+cd ~
 cd /
 ls
 cd bin
 ls
-cd ~
-vim ~/program/array_sum.cpp 
-vim ~/program/array_sum.cpp 
-sudo pacman -R tmux
-vim ~/program/array_sum.cpp 
-vim program/array_sum.cpp 
-vim program/array_sum.cpp 
-sudo echo 5 > /sys/class/backlight/acpi_video0/brightness
-cd /sys/class/backlight/
+cd .dotfiles/i3/
 ls
-sudo echo 10 > /sys/class/backlight/intel_backlight/brightness
-cd /sys/class/backlight/intel_backlight/brightness
-cd /sys/class/backlight/intel_backlight
-su root
-cd /etc/udev/rules.d/
+vim i3
+brightnessctl set +2%
+brightnessctl set +2%
+brightnessctl set -2%
+brightnessctl set 2%-
+brightnessctl set 2%-
+brightnessctl set 2%-
+brightnessctl set 2%
+ls
+cd .config/
+ls
+cd i3
+ls
+ls
+cd ..
+ls -a
+ls -a
+cd ..
 ls
 ls -a
-vim 81-backlight.rules
-cd ~
-sudo pacman -S brightnessctl
-brightnessctl 
-brightnessctl --help
-systemd --help
-systemctl --help
-systemctl -l
-systemctl status
-cd /.co
-cd ~/.config/
+cd do
+cd .dotfiles/
 ls
-cd systemd/
+cd i3/
+ls
+cd i3
 ls
 cd ~
-cd /etc/systemd/
+vim -o .Xresources 
+cd .config/
 ls
-cd sleep.conf 
-vim sleep.conf 
-vim sleep.conf 
-vim -o logind.conf 
 cd ~
-sudo pacman -S xlockmore
-xlock 
-sudo pacman -R xlockmore
-sudo pacman -S i3lock
-i3lock 
+cd ~/.config/i3/
+ls
+cp ~/.dotfiles/i3/i3/config ~/.config/i3
+ls
+cd cd ~
+cd ~
+cd .dotfiles/
+ls
+cd i3/
+ls
+cd i3status/
+ls
+cp ~/.dotfiles/i3/i3status/config ~/.config/i3status
+cd ..
+cd ..
+ls
+cd bash/
+ls
+lls -a
+ls -a
+cd ~ && ls -a
+cp ~/.dotfiles/bash/.bash_history ~/.bash_history 
+cp ~/.dotfiles/bash/.bashrc ~/.bashrc 
+vim -o .bashrc 
+vim -o ~/.dotfiles/bash/.bashrc 
+vim -o .Xresources 
+vim -o .xinitrc 
+sudo systemctl restart display-manager
+vim -o ~/picom/picom.conf 
+vim -o ~/picom/picom.conf 
+ls
+cd .dotfiles/
+ls
+cd xorg/
+ls
+ls -a
+cd ~
+cd picom
+ls
+vim picom.conf 
+picom --config ~/picom/picom.conf 
+cd ~
+vim -o .dotfiles/picom/picom/picom.conf 
+vim ~/.dotfiles/i3/i3/config 
+cp ~/.config/i3/config ~/.dotfiles/i3/i3/config 
+cd ~/.dotfiles/
+ls
+stow bash/
+stow firefox/
+stow git/
+stow i3/
+stow picom/
+stow systemd/systemd/
+stow systemd/
+stow vim/
+stow xorg/
+cd vim/
+ls
+ls -a
+cd ..
+stow vim/
+man stow
+stow --adopt vim/
+cd ~/.config/i3/config 
 vim ~/.config/i3/config 
-sudo systemctl suspend
-ls -a
-ls
-cd ~/.config/picom/
-ls
-vi picom.conf 
-vim  picom.conf 
-cd ~
-ls
-ls -a
-vim todo/
-bluetoothctl 
-cd /var/log
-ls
-cat lastlog 
-ls
-ls -a
-cat  journal/
-cd journal/
-ls
-cd ..
-ls
-exit
-journalctl 
-cd /var/log/journal/
-ls
-cd aa9015ff15024e89b1484413b5a073a5/
-ls
-cd  system.journal 
-vim -o  system.journal 
-cd ~/
-ls -a
-cd /etc/systemd/
-ls
-vim -o sleep.conf 
-vim -o logind.conf 
-sudo pacman -S cups
-man cups
-sudo pacman -S avahi
-systemctl start avahi-daemon
-vim /etc/nsswitch.conf 
-sudo vim /etc/nsswitch.conf 
-systemctl start avahi-daemon
-systemctl restart cups.service
-vim -o  /etc/nsswitch.conf 
-vim -o /etc/cups/cups-files.conf
-vim -o /etc/cups/cupsd.conf
-vim -o /etc/cups/ppd/
-cd  /etc/cups/ppd/
-ls
-ls -a
-cd /usr/share/ppd
-ls
-vim -o cupsfilters
-cd ..
-ls
-cd cups/
-cd model/
-ls
-ls -a
-cd /usr/share/ppd
-ls
-vim cupsfilters/
-vim cupsfilters/
-sudo pacman -S gth3-print-backends
-sudo pacman -S gtk3-print-backends
-cd ~
-cd program
-ls
-lp array_sum.cpp 
-lp array_sum.cpp -d
-lp array_sum.cpp -d EPSON_NET_3760_Series
-lpstat -p -d
-lpstat -p
-lpinfo -v
-lp array_sum.cpp -d printer
-lp array_sum.cpp -d 1
-sudo pacman -S footmatic-db-engine footmatic-db
-sudo pacman -S foomatic-db-engine foomatic-db
-cd  /etc/cups/ppd/
-ls
-vim -o printer.ppd
-cd program/pyvenv/
-vim main.py 
-cd program/pyvenv/
-~/program/pyvenv/bin/python main.py 
-vim ~/.config/i3/config 
-ls
-ls
-cd Downloads/
-ls
-vim config 
-cd ~
-ls -a
-cd Downloads/
-ls
-cd /
-ls
-cd home/pie/
-ls
-cd Downloads/
-ls
-cd ..
-cd Downloads/
-ls
-ls -a
-cd ..
-cd Downloads/
-ls
-ls -a
-jounalctl
-dmesg 
-sudo dmesg 
-sudo dmesg | grep hibernate
-sudo dmesg | grep hi
-sudo dmesg | grep hib
-sudo dmesg | grep hibernat
-jounalctl
-journalctl -b -1
-cat /proc/meminfo 
-vim /etc/default/grub 
-cat /proc/meminfo 
-reboot 
-vim /etc/systemd/system.conf 
-sudo vim /etc/systemd/system.conf 
-reboot
-systemctl hibernate
-dd man
-man dd
-cd /dev/zero 
-ls
-cd /dev/
-ls
-vim -o zero 
-sudo dd if=/dev/zero of=/swapfile.tmp bs=1M count=16384
-sudo mkswap /swapfile.tmp 
-ls
-sudo swapon /swapfile.tmp 
-chmod 0600
-chmod 0600 /swapfile.tmp 
-sudo chmod 0600 /swapfile.tmp 
-sudo swapon /swapfile.tmp 
-sudo swapoff /swapfile.tmp 
-cd ~
-lsblk l
-lsblk 
-vim -o /etc/fstab 
-ls -a
-cd /
-ls
-sudo rm swapfile.tmp 
-ls
-lsblk 
-sudo swapoff /dev/nvme0n1p2
-sudo rm /dev/nvme0n1p2
-sudo dd if=/dev/zero of=/swapfile bs=1M count=16384
-sudo dd if=/dev/zero of=/dev/nvm0n1p2 bs=1M count=16384
-sudo dd if=/dev/zero of=/dev/nvme0n1p2 bs=1M count=16384
-ls
-sudo rm swapfile 
-lsblk
-sudo rm /dev/nvme0n1p2
-sudo dd if=/dev/zero of=/dev/nvme0n1p2 bs=1M count=16384
-sudo dd if=/dev/zero of=/dev/nvme0n1p2 bs=1M count=4096
-sudo mkswap /dev/nvme0n1p2
-sudo mkswap /dev/nvme0n1p2
-sudo dd if=/dev/zero of=/dev/nvme0n1p2 bs=1M count=4096
-fdisk 
-fdisk  -l
-sudo fdisk -l
-lsblk 
-sudo mkswap /dev/nvme0n1p2
- mkswap /dev/nvme0n1p2
-sudo fdisk -l
-sudo fdisk /dev/nvm0n1
-cd /dev/
-ls
-sudo fdisk /dev/nvme0n1
-sudo mkswap /dev/nvme0n1p2
-sudo fdisk /dev/nvme0n1
-reboot
-lsblk
-swapon --show
-lsblk
-swapon --show
-lsblk
-swapon --show
-swapon --show
-cat /proc/meminfo 
-free -h
-top
-top
+vim i3/i3/config 
+which stow
 cd program/
 ls
-cd ~
+vim array_sum.cpp 
 ls
-vim commands
-cd program/
-python3 -m venv linearprogramming
-cd linearprogramming/
+rm -rf code.a 
+rm -rf array_sum.cpp 
 ls
-vim - pyvenv.cfg 
-vim -o pyvenv.cfg 
-ls
-cd program/
-ls
-cd linearprogramming/
-ls
-cd ~
-cd program/
-rm -rf linearprogramming/
-ls
-lpe
-lpq
-man lpq
-lpstat -S
-lpstat -R
-cups
-ls
-cd fuse/
-ls
-ls
-ls -a[B
-cd ~
-rm fuse/
-rm fuse
-rm fuse
-rmdir fuse
-ls
-cd todo/
-ls
-vim  tu
-vim  todo 
+rm -rf pyvenv/
 cd ..
-rm -rf todo/
 ls
-cd yay/
+ls
+cd DO
+cd Downloads/
 l
 ls
+cdls
+cl
+vim .bashrc 
+source ~/.bashrc 
+cl
+cl i3
+cl ..
+cl ..
+cd
+ls
+cd
+ls
+cl
+sudo
+vim ~/.config/i3/config 
+vim ~/.config/i3/config 
+vim ~/.config/i3/config 
+ls
+cd i3status
+cd i3
+cd ..
+cd i3
+ls
 cd ..
 ls
-cd Downloads/
+cd ...
+cd .config/i3status
+cd .config/i3status 
+l
+cd .config/
 ls
-feh pic.jpg 
-man feh
+vim i3status 
+mkdir i3status
+cd i3
 ls
+cd ..
+cp i3status config
+rm i3status 
+mkdir i3status
+mv config i3status/
+ls
+cl i3status/
+cd config 
 vim config 
 cd ..
+cd ..
 ls
-cd commands 
+rm -rf i3
+rm -rf i3status
+ls
+cd .config/
+ls
+:q
+:q
+cd ..
+cd  .config/
+ls
+cl -a 
+ls -
+ls -a
+cd i3status 
+vim i3status 
+cl .config/i3
+vim config 
 vim commands 
 ls
-cd clion/
-ls
-cd ..
-cd CLionProjects/
-ls
-cd ..
-ls
-cd ..
-ls
-cd ..
+cl program/
+mkdir into_to_algorithms
+cd into_to_algorithms/
+git init
+ls -a
+rm gi
+rm .git/
+rm -rf .git/
 ls
 ls -a
+mkdir include
+mkdir src
+touch main.cpp
 ls
-cd lost+found/
-ls
-cd etc
+cd src/
 ls
 ls
-ls -a
 ls
+mkdir matrices_multiplying
+cd matrices_multiplying/
+iterate.cpp
+touch iterate.cpp
+vim iterate.cpp 
+cd ~
 cd program/
 ls
+rm -rf into_to_algorithms/
+mkdir intro_to_algorithms
+cd intro_to_algorithms/
+python3 -m venv
+python3 -m venv
 cd ..
-cd Downloads/
+rm -rf into_to_algorithms/
+python3 -m venv intro_to_algorithms
+cd intro_to_algorithms/
+ls
+cd pyvenv.cfg 
+vim pyvenv.cfg 
+cl bin/
+cd ..
+ls
+mkdir src
+mkdir test
+cd src/
+vim iterate_matrix_multiply
+cp iterate_matrix_multiply iterate_matrix_multiply.py
+rm iterate_matrix_multiply
+vim iterate_matrix_multiply.py 
+cd program/intro_to_algorithms/
+cd src/
+python3 iterate_matrix_multiply.py 
+python3 iterate_matrix_multiply.py 
+python3 iterate_matrix_multiply.py 
+python3 iterate_matrix_multiply.py 
+python3 iterate_matrix_multiply.py 
+python3 iterate_matrix_multiply.py 
+python3 iterate_matrix_multiply.py 
+python3 iterate_matrix_multiply.py 
+git clone https://github.com/mathworks-ref-arch/matlab-dockerfile.git
+cd matlab-dockerfile
+docker build -t matlab:r2024a .
+sudo pacman -S docker
+docker build -t matlab:r2024a .
+ls
+rm -rf matlab-dockerfile/
+yay -S matlab
+lsssssss
+cd program/
+ls
+pytohn3 im venv calculator
+python3 im venv calculator
+python3 -m venv calculator
+cd calculator/
+ls
+vim main.py
+vim main.py 
+ls
+bin/pip3 install numpy math
+python3 --vers
+bin/pip install numpy math
+python3 -m pip install --upgrade pip
+bin/python3 -m pip install --upgrade pip
+bin/pip3 install numpy math
+bin/pip3 install numpy
+bin/pip3 install math
+cd ..
+ls
+cd calculator/
+ls
+cl lib
+cl ..
+cl include/
+cl ..
+cl lib64
+cl ..
+cd bin/
+ls
+python3 ~/program/calculator/main.py 
+bin/pip3 install numpy
+cd ..
+bin/pip3 install numpy
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+cd program/calculator/
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/pip3 matplotlib
+~/program/calculator/bin/pip3 install matplotlib
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+~/program/calculator/bin/python3 ~/program/calculator/main.py 
+vim ~/program/calculator/main.py 
+;s
+cd ..
+ls
+cd ~
+cd program/intro_to_algorithms/
+vim m
+ls
+cd test/
+vim te
 ls
 cd ..
-locale
-vim
+cd src/
 ls
-sudo pacman -Syy
-sudo pacman -S spotify-launcher
-spotify-launcher 
-vim ~/.config/i3/config 
-vim ~/.config/i3/config 
-vim ~/.config/i3/config 
-vim ~/.config/i3/config 
-sudo pacman -R spotify
+cd ..
+cd ..
+rm -rf intro_to_algorithms/
+python3 -m venv alg
+man python3
+cd alg/
+vim main.py
 ls
+python3 main.py 
+ls
+vim main.py 
+ls
+rm main.py 
+vim iterate_spuare_matrix.py
+cd program/alg/
+ls
+vim ~/.config/i3/config 
+ls
+vim commands 
+ls
+cd  .dotfiles/
+ls
+cd vim/
+ls
+ls
+cd ..
+cd i3/
+ls
+cd i3
+ls
+vim config 
+ls
+mv ~/.config/i3/config ~/.dotfiles/i3/i3/config 
+vim config 
+cd ..
+cd ..
+ls
+stow i3
+git commit -m "a"
 ls -a
-ls
-pacman -Q
-yay man
-man yay
-pacman -Qm
-pacman -Q
+git commit -a
+git commit -am "
+a
+

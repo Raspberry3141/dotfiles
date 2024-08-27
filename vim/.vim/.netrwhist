@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/etc/cups/ppd'
+let g:netrw_dirhist_9='/home/pie/.dotfiles/i3/i3'
 let g:netrw_dirhist_8='/home/pie/.config/procps'
 let g:netrw_dirhist_7='/home/pie/.config'
 let g:netrw_dirhist_6='/home/pie/.config/procps'

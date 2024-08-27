@@ -11,22 +11,22 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/scratch
+~MSle0~/picom
 
 # Last Substitute String:
 $
 
 # Command Line History (newest to oldest):
-:wq
-|2,0,1723857585,,"wq"
+:q
+|2,0,1724085183,,"q"
 :w
-|2,0,1723857408,,"w"
+|2,0,1724085115,,"w"
+:wq
+|2,0,1724085048,,"wq"
 :q!
 |2,0,1723856920,,"q!"
 :qq!
 |2,0,1723856917,,"qq!"
-:q
-|2,0,1723855114,,"q"
 :s
 |2,0,1722820454,,"s"
 :cd program/
@@ -53,6 +53,10 @@ $
 |2,0,1721117461,,"qq"
 
 # Search String History (newest to oldest):
+?/picom
+|2,1,1724084828,47,"picom"
+? @$
+|2,1,1723925024,,"@$"
 ?/scratch
 |2,1,1723857490,47,"scratch"
 ?/exec
@@ -63,8 +67,6 @@ $
 |2,1,1723000625,47,"set"
 ??\a
 |2,1,1722790036,63,"\\a"
-? @$
-|2,1,1722790036,,"@$"
 ?//
 |2,1,1721766186,47,"/"
 ? }
@@ -83,9 +85,9 @@ $
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	    frame = Frame(window)
-|3,0,0,1,1,0,1722817964,"    frame = Frame(window)"
+"0	CHAR	0
+	left
+|3,0,0,0,1,0,1723925027,"left"
 "1	LINE	0
 	dd
 |3,0,1,1,1,0,1723857306,"dd"
@@ -125,240 +127,244 @@ $
 	        video.streams.filter(only_audio=True).download()
 |3,0,9,1,1,0,1722819737,"        video.streams.filter(only_audio=True).download()"
 ""-	CHAR	0
-	left
-|3,1,36,0,1,0,1723857348,"left"
+	true
+|3,1,36,0,1,0,1724084924,"true"
 
 # File marks:
-'0  86  30  ~/.config/i3/config
-|4,48,86,30,1723857585,"~/.config/i3/config"
-'1  72  32  ~/.config/i3/config
-|4,49,72,32,1723857101,"~/.config/i3/config"
-'2  70  32  ~/.config/i3/config
-|4,50,70,32,1723857101,"~/.config/i3/config"
-'3  47  0  ~/.config/i3/config
-|4,51,47,0,1723856920,"~/.config/i3/config"
-'4  47  0  ~/.config/i3/config
-|4,52,47,0,1723856920,"~/.config/i3/config"
-'5  45  0  ~/.config/i3/config
-|4,53,45,0,1723856920,"~/.config/i3/config"
-'6  45  0  ~/.config/i3/config
-|4,54,45,0,1723856920,"~/.config/i3/config"
-'7  1  0  ~/.config/i3/config
-|4,55,1,0,1723856705,"~/.config/i3/config"
-'8  1  0  ~/.config/i3/config
-|4,56,1,0,1723856705,"~/.config/i3/config"
-'9  1  0  ~/.config/i3/config
-|4,57,1,0,1723856705,"~/.config/i3/config"
+'0  1  0  ~/.dotfiles/i3/i3/config
+|4,48,1,0,1724085183,"~/.dotfiles/i3/i3/config"
+'1  8  33  ~/.config/i3/config
+|4,49,8,33,1724085129,"~/.config/i3/config"
+'2  8  4  ~/.config/i3/config
+|4,50,8,4,1724085088,"~/.config/i3/config"
+'3  8  57  ~/.config/i3/config
+|4,51,8,57,1724085049,"~/.config/i3/config"
+'4  8  57  ~/.config/i3/config
+|4,52,8,57,1724085049,"~/.config/i3/config"
+'5  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,53,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+'6  8  21  ~/.dotfiles/i3/i3/config
+|4,54,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+'7  8  21  ~/.dotfiles/i3/i3/config
+|4,55,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+'8  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,56,1,0,1724084757,"~/.dotfiles/picom/picom/picom.conf"
+'9  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,57,1,0,1724084757,"~/.dotfiles/picom/picom/picom.conf"
 
 # Jumplist (newest first):
--'  86  30  ~/.config/i3/config
-|4,39,86,30,1723857585,"~/.config/i3/config"
--'  20  20  ~/.config/i3/config
-|4,39,20,20,1723857493,"~/.config/i3/config"
--'  19  31  ~/.config/i3/config
-|4,39,19,31,1723857491,"~/.config/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724085183,"~/.dotfiles/i3/i3/config"
+-'  8  33  ~/.config/i3/config
+|4,39,8,33,1724085129,"~/.config/i3/config"
+-'  8  33  ~/.config/i3/config
+|4,39,8,33,1724085129,"~/.config/i3/config"
 -'  1  0  ~/.config/i3/config
-|4,39,1,0,1723857166,"~/.config/i3/config"
--'  72  32  ~/.config/i3/config
-|4,39,72,32,1723857101,"~/.config/i3/config"
--'  70  32  ~/.config/i3/config
-|4,39,70,32,1723857101,"~/.config/i3/config"
+|4,39,1,0,1724085089,"~/.config/i3/config"
 -'  1  0  ~/.config/i3/config
-|4,39,1,0,1723856921,"~/.config/i3/config"
--'  47  0  ~/.config/i3/config
-|4,39,47,0,1723856920,"~/.config/i3/config"
--'  45  0  ~/.config/i3/config
-|4,39,45,0,1723856920,"~/.config/i3/config"
--'  45  0  ~/.config/i3/config
-|4,39,45,0,1723856920,"~/.config/i3/config"
--'  116  0  ~/.config/i3/config
-|4,39,116,0,1723856878,"~/.config/i3/config"
--'  114  0  ~/.config/i3/config
-|4,39,114,0,1723856878,"~/.config/i3/config"
--'  114  0  ~/.config/i3/config
-|4,39,114,0,1723856878,"~/.config/i3/config"
+|4,39,1,0,1724085089,"~/.config/i3/config"
+-'  8  4  ~/.config/i3/config
+|4,39,8,4,1724085088,"~/.config/i3/config"
+-'  8  4  ~/.config/i3/config
+|4,39,8,4,1724085088,"~/.config/i3/config"
 -'  1  0  ~/.config/i3/config
-|4,39,1,0,1723856706,"~/.config/i3/config"
+|4,39,1,0,1724085077,"~/.config/i3/config"
 -'  1  0  ~/.config/i3/config
-|4,39,1,0,1723856705,"~/.config/i3/config"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  4  0  ~/commands
-|4,39,4,0,1723275858,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/commands
-|4,39,1,0,1723275830,"~/commands"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
--'  1  0  ~/Downloads/config
-|4,39,1,0,1723275820,"~/Downloads/config"
+|4,39,1,0,1724085077,"~/.config/i3/config"
+-'  8  57  ~/.config/i3/config
+|4,39,8,57,1724085049,"~/.config/i3/config"
+-'  8  57  ~/.config/i3/config
+|4,39,8,57,1724085049,"~/.config/i3/config"
+-'  1  0  ~/.config/i3/config
+|4,39,1,0,1724085016,"~/.config/i3/config"
+-'  1  0  ~/.config/i3/config
+|4,39,1,0,1724085016,"~/.config/i3/config"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  128  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,128,0,1724084997,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084875,"~/.dotfiles/picom/picom/picom.conf"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  8  21  ~/.dotfiles/i3/i3/config
+|4,39,8,21,1724084837,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  3  3  ~/.dotfiles/i3/i3/config
+|4,39,3,3,1724084828,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/i3/i3/config
+|4,39,1,0,1724084792,"~/.dotfiles/i3/i3/config"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084757,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084757,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084757,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084757,"~/.dotfiles/picom/picom/picom.conf"
+-'  1  0  ~/.dotfiles/picom/picom/picom.conf
+|4,39,1,0,1724084757,"~/.dotfiles/picom/picom/picom.conf"
 
 # History of marks within files (newest to oldest):
 
+> ~/.dotfiles/i3/i3/config
+	*	1724085178	0
+	"	1	0
+
 > ~/.config/i3/config
-	*	1723857499	0
-	"	86	30
-	^	19	1
-	.	19	0
+	*	1724085115	0
+	"	8	33
+	^	8	34
+	.	8	34
 	+	1	0
 	+	2	0
 	+	1	5008
@@ -433,6 +439,118 @@ $
 	+	19	36
 	+	20	1
 	+	19	0
+	+	8	34
+
+> ~/.dotfiles/picom/picom/picom.conf
+	*	1724084954	0
+	"	128	0
+	^	76	14
+	.	76	13
+	+	76	13
+
+> ~/.vimrc
+	*	1724084253	0
+	"	1	0
+	^	3	39
+	.	3	38
+	+	14	0
+	+	8	12
+	+	8	13
+	+	9	18
+	+	12	18
+	+	5	0
+	+	4	14
+	+	3	38
+
+> ~/.xinitrc
+	*	1724083812	0
+	"	1	0
+	^	3	18
+	.	3	17
+	+	1	60
+	+	3	17
+
+> ~/.Xresources
+	*	1724083799	0
+	"	1	0
+	^	19	0
+	.	3	0
+	+	1	11
+	+	21	25
+	+	22	25
+	+	23	26
+	+	30	54
+	+	30	0
+	+	32	0
+	+	30	9
+	+	30	11
+	+	32	0
+	+	32	15
+	+	32	21
+	+	35	55
+	+	32	63
+	+	30	59
+	+	30	57
+	+	30	53
+	+	37	21
+	+	43	0
+	+	37	22
+	+	38	28
+	+	39	22
+	+	30	52
+	+	30	56
+	+	30	58
+	+	32	62
+	+	30	52
+	+	30	56
+	+	30	58
+	+	32	62
+	+	39	165
+	+	39	23
+	+	43	0
+	+	40	0
+	+	41	25
+	+	32	62
+	+	30	58
+	+	30	56
+	+	30	1
+	+	30	2
+	+	30	1
+	+	32	1
+	+	30	0
+	+	32	0
+	+	30	59
+	+	30	63
+	+	30	65
+	+	32	69
+	+	30	60
+	+	30	64
+	+	30	66
+	+	32	70
+	+	30	0
+	+	25	39
+	+	27	0
+	+	28	0
+	+	29	0
+	+	27	9
+	+	28	11
+	+	29	15
+	+	30	0
+	+	3	25
+	+	18	22
+	+	3	0
+
+> ~/.dotfiles/bash/.bashrc
+	*	1724083783	0
+	"	1	0
+
+> ~/.bashrc
+	*	1724083764	0
+	"	1	0
+
+> ~/.config/pulse/cookie
+	*	1723864927	0
+	"	1	0
 
 > ~/commands
 	*	1723275856	0
@@ -768,76 +886,6 @@ $
 	*	1721484360	0
 	"	1	0
 
-> ~/.Xresources
-	*	1721454554	0
-	"	26	0
-	^	19	0
-	.	3	0
-	+	1	11
-	+	21	25
-	+	22	25
-	+	23	26
-	+	30	54
-	+	30	0
-	+	32	0
-	+	30	9
-	+	30	11
-	+	32	0
-	+	32	15
-	+	32	21
-	+	35	55
-	+	32	63
-	+	30	59
-	+	30	57
-	+	30	53
-	+	37	21
-	+	43	0
-	+	37	22
-	+	38	28
-	+	39	22
-	+	30	52
-	+	30	56
-	+	30	58
-	+	32	62
-	+	30	52
-	+	30	56
-	+	30	58
-	+	32	62
-	+	39	165
-	+	39	23
-	+	43	0
-	+	40	0
-	+	41	25
-	+	32	62
-	+	30	58
-	+	30	56
-	+	30	1
-	+	30	2
-	+	30	1
-	+	32	1
-	+	30	0
-	+	32	0
-	+	30	59
-	+	30	63
-	+	30	65
-	+	32	69
-	+	30	60
-	+	30	64
-	+	30	66
-	+	32	70
-	+	30	0
-	+	25	39
-	+	27	0
-	+	28	0
-	+	29	0
-	+	27	9
-	+	28	11
-	+	29	15
-	+	30	0
-	+	3	25
-	+	18	22
-	+	3	0
-
 > ~/.config/i3status/config
 	*	1721454206	0
 	"	34	37
@@ -879,31 +927,9 @@ $
 	+	25	23
 	+	34	37
 
-> ~/.vimrc
-	*	1721436375	0
-	"	3	38
-	^	3	39
-	.	3	38
-	+	14	0
-	+	8	12
-	+	8	13
-	+	9	18
-	+	12	18
-	+	5	0
-	+	4	14
-	+	3	38
-
 > ~/.vim/.vimrc
 	*	1721436225	0
 	"	1	0
-
-> ~/.xinitrc
-	*	1721435765	0
-	"	1	0
-	^	3	18
-	.	3	17
-	+	1	60
-	+	3	17
 
 > /etc/i3status.conf
 	*	1721148562	0

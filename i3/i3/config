@@ -1,3 +1,4 @@
+#
 set $mod Mod3
 gaps inner 4
 font pango:monospace 8
@@ -5,7 +6,7 @@ font pango:monospace 8
 exec --no-startup-id xset r rate 190 25
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
-exec --no-startup-id picom -CGb
+exec --no-startup-id picom -CGb --config /home/pie/picom/picom.conf
 exec --no-startup-id feh --bg-scale /home/pie/Downloads/pic.jpg
 
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -20,7 +21,7 @@ bindsym Mod4+Control+space focus mode_toggle
 #bindsym Mod4+minus scratchpad show
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #e8b3fc   #e8b3fc
+client.focused          #4c7899 #285577 #ffffff #ffffff   #ffffff
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -43,7 +44,7 @@ set $down s
 set $left a
 set $right d
 
-floating_modifier mod4
+# floating_modifier mod4
 tiling_drag modifier titlebar
 
 bindsym mod4+x exec urxvt
