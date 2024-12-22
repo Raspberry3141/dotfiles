@@ -1,1 +1,1 @@
-i3wm,  feh, 
+i3wm,  feh, nvim, picom, 
