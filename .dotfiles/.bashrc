@@ -9,5 +9,5 @@ function cl() {
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='\[\033[0;36m\]\u@\h\[\033[0m\]:\[\033[0;36m\]\w\[\033[0m\]\$ '
+PS1='[\[\033[0;36m\]\u@\h\[\033[0m\]:\[\033[0;36m\]\w\[\033[0m\]]\$ '
 
