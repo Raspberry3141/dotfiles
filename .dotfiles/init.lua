@@ -22,8 +22,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.o.statuscolumn = "%s %l %r"
+vim.opt.statuscolumn = "%s %l %r"
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -94,29 +96,41 @@ require("lazy").setup({
 		branch = 'v1.x',
 		dependencies = {
 		    -- LSP Support
-		    {'neovim/nvim-lspconfig'},             -- Required
-		    {'williamboman/mason.nvim'},           -- Optional
-		    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+		    {'neovim/nvim-lspconfig'},             
+		    {'williamboman/mason.nvim'},          
+		    {'williamboman/mason-lspconfig.nvim'},
 
 		    -- Autocompletion
-		    {'hrsh7th/nvim-cmp'},         -- Required
-		    {'hrsh7th/cmp-nvim-lsp'},     -- Required
-		    {'hrsh7th/cmp-buffer'},       -- Optional
-		    {'hrsh7th/cmp-path'},         -- Optional
-		    {'saadparwaiz1/cmp_luasnip'}, -- Optional
-		    {'hrsh7th/cmp-nvim-lua'},     -- Optional
+		    {'hrsh7th/nvim-cmp'},         
+		    {'hrsh7th/cmp-nvim-lsp'},    
+		    {'hrsh7th/cmp-buffer'},     
+		    {'hrsh7th/cmp-path'},      
+		    {'saadparwaiz1/cmp_luasnip'}, 
+		    {'hrsh7th/cmp-nvim-lua'},    
 
 		    -- Snippets
-		    {'L3MON4D3/LuaSnip'},             -- Required
-		    {'rafamadriz/friendly-snippets'}, -- Optional
+		    {'L3MON4D3/LuaSnip'},             
+		    {'rafamadriz/friendly-snippets'},
 		},
-		config = function()
-			local lsp = require('lsp-zero')
-			lsp.preset('recommended')
-			lsp.nvim_workspace()
-			lsp.setup()
-		end},
+			config = function()
+				local lsp = require('lsp-zero').preset({
+					name = 'minimal',
+					set_lsp_keymaps = true,
+					manage_nvim_cmp = true,
+					suggest_lsp_servers = false,
+				})
 
+				lsp.setup()
+
+				vim.diagnostic.config({
+					virtual_text = true,
+					signs = true,
+					update_in_insert = false,
+					underline = true,
+					severity_sort = false,
+					float = true,
+				})
+			end},
 
 
 

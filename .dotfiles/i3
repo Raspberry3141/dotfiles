@@ -48,7 +48,7 @@ tiling_drag modifier titlebar
 
 bindsym mod4+x exec alacritty;
 bindsym mod4+z exec firefox;
-bindsym mod4+c exec urxvt -e vim;
+#bindsym mod4+c exec alacritty -e; 
 bindsym mod4+q kill
 
 bindsym mod4+e exec --no-startup-id dmenu_run
@@ -100,24 +100,24 @@ set $ws10 "10"
 bindsym Mod4+1 workspace number $ws1
 bindsym Mod4+2 workspace number $ws2
 bindsym Mod4+3 workspace number $ws3
-# bindsym Mod4+Shift+4 workspace number $ws4
-# bindsym Mod4+Shift+5 workspace number $ws5
-# bindsym Mod4+Shift+6 workspace number $ws6
-# bindsym Mod4+Shift+7 workspace number $ws7
-# bindsym Mod4+Shift+8 workspace number $ws8
-# bindsym Mod4+Shift+9 workspace number $ws9
-# bindsym Mod4+Shift+0 workspace number $ws10
+bindsym Mod4+Shift+4 workspace number $ws4
+bindsym Mod4+Shift+5 workspace number $ws5
+bindsym Mod4+Shift+6 workspace number $ws6
+bindsym Mod4+Shift+7 workspace number $ws7
+bindsym Mod4+Shift+8 workspace number $ws8
+bindsym Mod4+Shift+9 workspace number $ws9
+bindsym Mod4+Shift+0 workspace number $ws10
 
 bindsym Mod4+Control+1 move container to workspace number $ws1
 bindsym Mod4+Control+2 move container to workspace number $ws2
 bindsym Mod4+Control+3 move container to workspace number $ws3
-# bindsym Mod4+Control+4 move container to workspace number $ws4
-# bindsym Mod4+Control+5 move container to workspace number $ws5
-# bindsym Mod4+Control+6 move container to workspace number $ws6
-# bindsym Mod4+Control+7 move container to workspace number $ws7
-# bindsym Mod4+Control+8 move container to workspace number $ws8
-# bindsym Mod4+Control+9 move container to workspace number $ws9
-# bindsym Mod4+Control+0 move container to workspace number $ws10
+bindsym Mod4+Control+4 move container to workspace number $ws4
+bindsym Mod4+Control+5 move container to workspace number $ws5
+bindsym Mod4+Control+6 move container to workspace number $ws6
+bindsym Mod4+Control+7 move container to workspace number $ws7
+bindsym Mod4+Control+8 move container to workspace number $ws8
+bindsym Mod4+Control+9 move container to workspace number $ws9
+bindsym Mod4+Control+0 move container to workspace number $ws10
 # reload the configuration file
 
 # bindsym Mod4+Shift+c reload
@@ -158,7 +158,7 @@ bar {
 	mode hide
 	hidden_state hide
 	modifier Mod1
-	position top
+	position bottom
 	i3bar_command i3bar --transparency
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     font pango:DejaVu Sans Mono 10
