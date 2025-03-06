@@ -47,7 +47,7 @@ set $right semicolon
 # floating_modifier mod4
 tiling_drag modifier titlebar
 
-bindsym mod4+x exec urxvt;
+bindsym mod4+x exec alacritty;
 bindsym mod4+z exec firefox;
 #bindsym mod4+c exec alacritty -e; 
 bindsym mod4+q kill
