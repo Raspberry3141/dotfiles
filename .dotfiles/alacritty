@@ -1,0 +1,16 @@
+[colors]
+  [colors.primary]
+  background = "#212121"
+  foreground = "#adadad"
+
+  [colors.cursor]
+  text = "#212121"
+  cursor = "#c7c191"
+
+[font]
+  size = 12
+  normal = { family = "Source Code Pro", style = "Regular"}
+  bold = { family = "Source Code Pro", style = "Bold"}
+  italic = { family = "Source Code Pro", style = "Italic"}
+  bold_italic = { family = "Source Code Pro", style = "Bold Italic"}
+
