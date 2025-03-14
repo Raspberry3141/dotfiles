@@ -1,11 +1,12 @@
 set $mod Mod3
-gaps inner 4
+gaps inner 0
+#gaps inner 4
 font pango:monospace 8
 
 exec --no-startup-id xset r rate 190 25
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-scale /home/pie/Downloads/pic.jpg
+#exec --no-startup-id feh --bg-scale /home/pie/Downloads/pic.jpg
 exec --no-startup-id picom -b
 
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -16,8 +17,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec "brightnessctl set 2%+";
 bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-";
 bindsym Mod4+Control+space focus mode_toggle
-#bindsym Mod4+shift+minus move scratchpad
-#bindsym Mod4+minus scratchpad show
+bindsym Mod4+shift+minus move scratchpad
+bindsym Mod4+minus scratchpad show
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #ffffff   #ffffff
@@ -83,9 +84,6 @@ bindsym mod4+f fullscreen toggle
 bindsym Mod4+Shift+space floating toggle
 
 bindsym Mod4+space focus mode_toggle
-
-bindsym Mod4+Shift+minus move scratchpad
-bindsym Mod4+minus scratchpad show
 
 set $ws1 "1"
 set $ws2 "2"
