@@ -15,22 +15,21 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.g.maplocalleader = " "
 vim.opt.number = true
---vim.opt.relativenumber = true
-vim.o.statuscolumn = " %s %l %r "
-
-
-
-
-
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.relativenumber = true
+vim.opt.statuscolumn = " %s %l %r "
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.scrolloff = 15
+
+vim.keymap.set('n','<leader>y', '"+y')
+vim.schedule(function()
+	vim.opt.clipboard = 'unnamedplus'
+end)
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -151,7 +150,6 @@ require("lazy").setup({
 				-- REQUIRED
 				vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 				vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
 				vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
 				vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
 				vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
