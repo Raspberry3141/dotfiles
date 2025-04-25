@@ -21,8 +21,13 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.statuscolumn = "%s %l %r"
+--vim.opt.relativenumber = true
+vim.o.statuscolumn = " %s %l %r "
+
+
+
+
+
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
