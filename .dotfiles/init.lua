@@ -11,9 +11,10 @@ vim.opt.scrolloff = 15
 
 vim.keymap.set('n','<leader>y', '"+y')
 vim.keymap.set('n','<C-c>','<cmd>nohlsearch<cr>')
+--vim.keymap.set("n", "<leader>q", vim.lsp.buf.code_action(), { desc="hi"})
 
 vim.keymap.set('n', '<leader>v', '<C-w><C-v>', { desc = 'vertical new window' })
-vim.keymap.set('n', '<leader>w', '<C-w><C-w>', { desc = 'focus next window' })
+vim.keymap.set('i', '<leader>w', '<C-w><C-w>', { desc = 'focus next window' })
 vim.schedule(function()
 	vim.opt.clipboard = 'unnamedplus'
 end)
@@ -183,7 +184,30 @@ require("lazy").setup({
 				}
 			},
 
-		}
+		},
+
+		{
+			"folke/trouble.nvim",
+			opts = {}, -- for default options, refer to the configuration section for custom setup.
+			cmd = "Trouble",
+			keys = {
+				{
+					"<leader>tt",
+					"<cmd>Trouble diagnostics toggle<cr>",
+					desc = "Diagnostics (Trouble)",
+				},
+				{
+					"<leader>xL",
+					"<cmd>Trouble loclist toggle<cr>",
+					desc = "Location List (Trouble)",
+				},
+				{
+					"<leader>xQ",
+					"<cmd>Trouble qflist toggle<cr>",
+					desc = "Quickfix List (Trouble)",
+				},
+			},
+}
 
 	},
 	-- Configure any other settings here. See the documentation for more details.
