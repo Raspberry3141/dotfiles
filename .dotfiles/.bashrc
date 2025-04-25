@@ -12,5 +12,5 @@ f() {
 	fzf | xargs -r xdg-open
 }
 fd() {
-	cd $(find . -type d -print | fzf)
+	cd ~/projects/ && cd $(find -maxdepth 1 | fzf)
 }
