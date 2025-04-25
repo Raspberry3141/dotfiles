@@ -1,3 +1,31 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.statuscolumn = " %s %l %r "
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.scrolloff = 15
+
+vim.keymap.set('n','<leader>y', '"+y')
+vim.keymap.set('n','<C-c>','<cmd>nohlsearch<cr>')
+
+vim.keymap.set('n', '<leader>v', '<C-w><C-v>', { desc = 'vertical new window' })
+vim.keymap.set('n', '<leader>w', '<C-w><C-w>', { desc = 'focus next window' })
+vim.schedule(function()
+	vim.opt.clipboard = 'unnamedplus'
+end)
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Flash highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -14,22 +42,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 vim.opt.rtp:prepend(lazypath)
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.statuscolumn = " %s %l %r "
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.scrolloff = 15
-
-vim.keymap.set('n','<leader>y', '"+y')
-vim.schedule(function()
-	vim.opt.clipboard = 'unnamedplus'
-end)
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -115,10 +127,6 @@ require("lazy").setup({
 				{'hrsh7th/cmp-path'},      
 				{'saadparwaiz1/cmp_luasnip'}, 
 				{'hrsh7th/cmp-nvim-lua'},    
-
-				-- Snippets
-				{'L3MON4D3/LuaSnip'},             
-				{'rafamadriz/friendly-snippets'},
 			},
 			config = function()
 				local lsp = require('lsp-zero').preset({
@@ -167,8 +175,15 @@ require("lazy").setup({
 				vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 		end},
 
+		{'m4xshen/autoclose.nvim',
+			opts = {
+				close = true,
+				keys = {
+					["<"] = { escape = false ,close = true, pair = "<>", disabled_filetypes = {"c"} },
+				}
+			},
 
-
+		}
 
 	},
 	-- Configure any other settings here. See the documentation for more details.
