@@ -192,20 +192,10 @@ require("lazy").setup({
 			cmd = "Trouble",
 			keys = {
 				{
-					"<leader>tt",
+					"<leader>e",
 					"<cmd>Trouble diagnostics toggle<cr>",
 					desc = "Diagnostics (Trouble)",
-				},
-				{
-					"<leader>xL",
-					"<cmd>Trouble loclist toggle<cr>",
-					desc = "Location List (Trouble)",
-				},
-				{
-					"<leader>xQ",
-					"<cmd>Trouble qflist toggle<cr>",
-					desc = "Quickfix List (Trouble)",
-				},
+				}
 			},
 }
 
