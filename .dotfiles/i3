@@ -1,4 +1,4 @@
-set $mod Mod3
+#set $mod Mod3
 gaps inner 0
 #gaps inner 4
 font pango:monospace 8
@@ -156,7 +156,7 @@ bar {
 	status_command i3status
 	mode hide
 	hidden_state hide
-	modifier Mod1
+	modifier Mod4
 	position bottom
 	i3bar_command i3bar --transparency
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
