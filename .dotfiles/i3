@@ -19,6 +19,7 @@ bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-";
 bindsym Mod4+Control+space focus mode_toggle
 bindsym Mod4+shift+minus move scratchpad
 bindsym Mod4+minus scratchpad show
+bindsym F10 exec maim ~/tempScreenShot.png
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #ffffff   #ffffff
@@ -29,8 +30,8 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 for_window [class="^.*"] border pixel 
 
-floating_minimum_size 75 x 50
-floating_maximum_size 640 x 480
+#floating_minimum_size 75 x 50
+#floating_maximum_size 640 x 480
 for_window [floating] move relative position center
 
 for_window [window_role="pop-up"] floating enable
@@ -48,10 +49,12 @@ set $right semicolon
 # floating_modifier mod4
 tiling_drag modifier titlebar
 
-bindsym mod4+x exec alacritty;
-bindsym mod4+z exec firefox;
+bindsym mod4+z exec alacritty;
+bindsym mod4+x exec firefox;
 #bindsym mod4+c exec alacritty -e; 
 bindsym mod4+q kill
+bindsym mod4+shift+w exec nmcli con up Birds5GHz
+bindsym mod4+control+w exec nmcli con down Birds5GHz
 
 bindsym mod4+e exec --no-startup-id dmenu_run
 
@@ -99,9 +102,9 @@ set $ws10 "10"
 bindsym Mod4+1 workspace number $ws1
 bindsym Mod4+2 workspace number $ws2
 bindsym Mod4+3 workspace number $ws3
-bindsym Mod4+Shift+4 workspace number $ws4
-bindsym Mod4+Shift+5 workspace number $ws5
-bindsym Mod4+Shift+6 workspace number $ws6
+bindsym Mod4+4 workspace number $ws4
+bindsym Mod4+5 workspace number $ws5
+bindsym Mod4+6 workspace number $ws6
 bindsym Mod4+Shift+7 workspace number $ws7
 bindsym Mod4+Shift+8 workspace number $ws8
 bindsym Mod4+Shift+9 workspace number $ws9
