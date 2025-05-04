@@ -12,5 +12,9 @@ f() {
 	fzf | xargs -r xdg-open
 }
 fd() {
-	cd ~/projects/ && cd $(find -maxdepth 1 | fzf)
+	GITPATH=$(find ~ -path "/home/admin/.local/share/nvim/lazy" -prune -o -type d -name .git -exec dirname {} \; | fzf)
+	cd "$GITPATH"
+	nvim "$GITPATH"
 }
+
+. "$HOME/.local/bin/env"
