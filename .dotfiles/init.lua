@@ -13,7 +13,7 @@ vim.opt.signcolumn = 'yes'
 vim.keymap.set('n', '<leader>w', '<C-w><C-w>', { desc = 'focus next window' })
 vim.keymap.set('n', '<leader>v', '<C-w><C-v>', { desc = 'v-split window' })
 vim.keymap.set('n','<C-c>','<cmd>nohlsearch<cr>')
-vim.api.nvim_create_autocmd({'BufEnter'}, {
+vim.api.nvim_create_autocmd({'BufRead'}, {
 	desc = 'move cursor to last changed pos when reading a buf',
 	callback = function()
 	if vim.api.nvim_buf_get_mark(0, ".")[1] ==0 and vim.api.nvim_buf_get_mark(0, ".")[2] == 0 then
@@ -23,7 +23,6 @@ vim.api.nvim_create_autocmd({'BufEnter'}, {
 	end
 	vim.api.nvim_win_set_cursor(0,{vim.api.nvim_buf_get_mark(0, ".")[1],vim.api.nvim_buf_get_mark(0, ".")[2]})
 end})
-
 
 vim.schedule(function()
 	vim.opt.clipboard = 'unnamedplus'
@@ -44,6 +43,8 @@ end)
 vim.keymap.set('n','<leader>[', function()
 	vim.diagnostic.jump({count = -1, float=true})
 end)
+
+vim.keymap.set('n','<leader>d', ':lua vim.diagnostic.open_float(nil, { focus = false, })<cr>')
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -119,7 +120,6 @@ require("lazy").setup({
 					local function opts(desc)
 						return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 					end
-
 					-- default mappings
 					api.config.mappings.default_on_attach(bufnr)
 
@@ -133,12 +133,6 @@ require("lazy").setup({
 					---
 				--}
 			end},
-
-		{"williamboman/mason.nvim",
-			config = function()
-				require("mason").setup()
-			end
-		},
 
 		{'hrsh7th/nvim-cmp',
 		dependencies = {
@@ -161,9 +155,10 @@ require("lazy").setup({
 						["<Enter>"] = cmp.mapping.confirm({select = true}),
 					}),
 
-			})
-		end
+				})
+			end
 		},         
+		
 
 		{"neovim/nvim-lspconfig",
 			config = function()
@@ -180,24 +175,20 @@ require("lazy").setup({
 
 				-- Configure error/warnings interface
 				vim.diagnostic.config({
-					virtual_text = false,
+					virtual_text = true,
+					
 					severity_sort = true,
 					float = {
 						style = 'minimal',
-						border = 'rounded',
+						update_in_insert = true,
+						-- border = 'rounded',
 						header = '',
 						prefix = '',
 					},
 					signs = {
 						text = {
 							[vim.diagnostic.severity.ERROR] = '✘',
-							[vim.diagnostic.severity.WARN] = '▲',
-							[vim.diagnostic.severity.HINT] = '⚑',
-							[vim.diagnostic.severity.INFO] = '»',
-						},
-					},
-				})
-
+							[vim.diagnostic.severity.WARN] = '▲', [vim.diagnostic.severity.HINT] = '⚑', [vim.diagnostic.severity.INFO] = '»', }, }, })
 				-- Add cmp_nvim_lsp capabilities settings to lspconfig
 				-- This should be executed before you configure any language server
 				local lspconfig_defaults = require('lspconfig').util.default_config
@@ -225,6 +216,42 @@ require("lazy").setup({
 						vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
 						vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 					end,
+				})
+			end
+		},
+
+
+		{"williamboman/mason.nvim",
+			config = function()
+				require("mason").setup()
+			end
+		},
+
+		{
+			"williamboman/mason-lspconfig.nvim",
+			config = function()
+				require('mason-lspconfig').setup({
+					handlers = {
+						function(server_name)
+							require('lspconfig')[server_name].setup({})
+						end,
+
+						require('lspconfig').lua_ls.setup({
+							settings = {
+								Lua = {
+									runtime = {
+										version = 'LuaJIT',
+									},
+									diagnostics = {
+										globals = {'vim'},
+									},
+									workspace = {
+										library = {vim.env.VIMRUNTIME},
+									},
+								},
+							},
+						})
+					}
 				})
 			end
 		},
@@ -307,7 +334,6 @@ require("lazy").setup({
 
 
 		},
-
 
 
 	},
