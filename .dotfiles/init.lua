@@ -8,13 +8,23 @@ vim.opt.tabstop = 4
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.scrolloff = 15
+vim.opt.signcolumn = 'yes'
 
-vim.keymap.set('n','<leader>y', '"+y')
+vim.keymap.set('n', '<leader>w', '<C-w><C-w>', { desc = 'focus next window' })
+vim.keymap.set('n', '<leader>v', '<C-w><C-v>', { desc = 'v-split window' })
 vim.keymap.set('n','<C-c>','<cmd>nohlsearch<cr>')
---vim.keymap.set("n", "<leader>q", vim.lsp.buf.code_action(), { desc="hi"})
+vim.api.nvim_create_autocmd({'BufEnter'}, {
+	desc = 'move cursor to last changed pos when reading a buf',
+	callback = function()
+	if vim.api.nvim_buf_get_mark(0, ".")[1] ==0 and vim.api.nvim_buf_get_mark(0, ".")[2] == 0 then
+		return
+	elseif vim.api.nvim_buf_get_mark(0, ".")[1] >= vim.api.nvim_buf_line_count(0) then
+		return
+	end
+	vim.api.nvim_win_set_cursor(0,{vim.api.nvim_buf_get_mark(0, ".")[1],vim.api.nvim_buf_get_mark(0, ".")[2]})
+end})
 
-vim.keymap.set('n', '<leader>v', '<C-w><C-v>', { desc = 'vertical new window' })
-vim.keymap.set('i', '<leader>w', '<C-w><C-w>', { desc = 'focus next window' })
+
 vim.schedule(function()
 	vim.opt.clipboard = 'unnamedplus'
 end)
@@ -26,6 +36,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.keymap.set('n','<leader>]', function()
+	vim.diagnostic.jump({count = 1, float=true})
+end)
+
+vim.keymap.set('n','<leader>[', function()
+	vim.diagnostic.jump({count = -1, float=true})
+end)
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -43,7 +61,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 vim.opt.rtp:prepend(lazypath)
-
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
@@ -52,7 +69,7 @@ require("lazy").setup({
 
 			config = function()
 				require("tokyonight").setup({
-					style = "storm", 
+					style = "moon", 
 				})
 				vim.cmd.colorscheme "tokyonight"
 			end},
@@ -61,8 +78,18 @@ require("lazy").setup({
 			dependencies = { 'nvim-lua/plenary.nvim' },
 			config = function()
 				local builtin = require('telescope.builtin')
-				vim.keymap.set('n', '<leader>f', builtin.find_files, { 
-					desc = 'Telescope find files' })
+				vim.keymap.set('n', '<leader>f', function()
+					builtin.find_files()
+				end
+				, { desc = 'Telescope find files' })
+				require('telescope').setup({
+				pickers = {
+					find_files = {
+						-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+						find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+					},
+				}
+			})
 			end},
 
 		{"nvim-treesitter/nvim-treesitter",
@@ -86,7 +113,6 @@ require("lazy").setup({
 				"nvim-tree/nvim-web-devicons",
 			},
 			config = function()
-				vim.keymap.set('n', '<leader>t', ":NvimTreeToggle<cr>",{desc = "toggle tree"})
 				local function my_on_attach(bufnr)
 					local api = require "nvim-tree.api"
 
@@ -98,13 +124,14 @@ require("lazy").setup({
 					api.config.mappings.default_on_attach(bufnr)
 
 				end
-
+				--UNCOMMENT TO ENABLE TREE
+				--vim.keymap.set('n', '<leader>r', ":NvimTreeToggle<cr>",{desc = "toggle tree"})
 				-- pass to setup along with your other options
-				require("nvim-tree").setup {
+				--require("nvim-tree").setup {
 					---
-					on_attach = my_on_attach,
+				--	on_attach = my_on_attach,
 					---
-				}
+				--}
 			end},
 
 		{"williamboman/mason.nvim",
@@ -113,41 +140,95 @@ require("lazy").setup({
 			end
 		},
 
-		{'VonHeikemen/lsp-zero.nvim',
-			branch = 'v1.x',
-			dependencies = {
-				-- LSP Support
-				{'neovim/nvim-lspconfig'},             
-				{'williamboman/mason.nvim'},          
-				{'williamboman/mason-lspconfig.nvim'},
+		{'hrsh7th/nvim-cmp',
+		dependencies = {
+			{'hrsh7th/cmp-nvim-lsp'},    
+			{'hrsh7th/cmp-buffer'},     
+			{'hrsh7th/cmp-path'},      
+			{'hrsh7th/cmp-nvim-lua'},    
+		},
+		config = function()
+			local cmp = require('cmp')
 
-				-- Autocompletion
-				{'hrsh7th/nvim-cmp'},         
-				{'hrsh7th/cmp-nvim-lsp'},    
-				{'hrsh7th/cmp-buffer'},     
-				{'hrsh7th/cmp-path'},      
-				{'saadparwaiz1/cmp_luasnip'}, 
-				{'hrsh7th/cmp-nvim-lua'},    
-			},
+			cmp.setup({
+				sources = {
+					{name = 'path'},
+					{name = 'nvim_lsp'},
+					{name = 'buffer', keyword_length = 3},
+				},
+				mapping = cmp.mapping.preset.insert({
+						["<Tab>"] = cmp.mapping.select_next_item(),
+						["<Enter>"] = cmp.mapping.confirm({select = true}),
+					}),
+
+			})
+		end
+		},         
+
+		{"neovim/nvim-lspconfig",
 			config = function()
-				local lsp = require('lsp-zero').preset({
-					name = 'minimal',
-					set_lsp_keymaps = true,
-					manage_nvim_cmp = true,
-					suggest_lsp_servers = false,
-				})
 
-				lsp.setup()
+				-- Add borders to floating windows
+				vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+					vim.lsp.handlers.hover,
+					{border = 'rounded'}
+				)
+				vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+					vim.lsp.handlers.signature_help,
+					{border = 'rounded'}
+				)
 
+				-- Configure error/warnings interface
 				vim.diagnostic.config({
-					virtual_text = true,
-					signs = true,
-					update_in_insert = false,
-					underline = true,
-					severity_sort = false,
-					float = true,
+					virtual_text = false,
+					severity_sort = true,
+					float = {
+						style = 'minimal',
+						border = 'rounded',
+						header = '',
+						prefix = '',
+					},
+					signs = {
+						text = {
+							[vim.diagnostic.severity.ERROR] = '✘',
+							[vim.diagnostic.severity.WARN] = '▲',
+							[vim.diagnostic.severity.HINT] = '⚑',
+							[vim.diagnostic.severity.INFO] = '»',
+						},
+					},
 				})
-			end},
+
+				-- Add cmp_nvim_lsp capabilities settings to lspconfig
+				-- This should be executed before you configure any language server
+				local lspconfig_defaults = require('lspconfig').util.default_config
+				lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+					'force',
+					lspconfig_defaults.capabilities,
+					require('cmp_nvim_lsp').default_capabilities()
+				)
+
+				-- This is where you enable features that only work
+				-- if there is a language server active in the file
+				vim.api.nvim_create_autocmd('LspAttach', {
+					callback = function(event)
+						local opts = {buffer = event.buf}
+
+						vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+						vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+						vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+						vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+						vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+						vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+						vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+						vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
+						vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+						vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+						vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+					end,
+				})
+			end
+		},
+
 		{
 			"ThePrimeagen/harpoon",
 			branch = "harpoon2",
@@ -171,11 +252,6 @@ require("lazy").setup({
 			end
 		},
 
-		{'mbbill/undotree',
-		config = function()
-				vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
-		end},
-
 		{'m4xshen/autoclose.nvim',
 			opts = {
 				close = true,
@@ -188,22 +264,54 @@ require("lazy").setup({
 
 		{
 			"folke/trouble.nvim",
-			opts = {}, -- for default options, refer to the configuration section for custom setup.
+			enabled = {false},
+			opts = {}, 
 			cmd = "Trouble",
 			keys = {
 				{
-					"<leader>e",
-					"<cmd>Trouble diagnostics toggle<cr>",
-					desc = "Diagnostics (Trouble)",
-				}
+					"<leader>x",
+					"<cmd>trouble diagnostics toggle<cr>",
+					desc = "diagnostics (trouble)",
+				},
 			},
-}
+		},
+
+		{"rrethy/vim-illuminate"},
+
+		{"voldikss/vim-floaterm",
+			init = function()
+				vim.g.floaterm_autoclose = 2
+			end,
+
+			config = function()
+					vim.keymap.set("t", "<C-c>", "<C-\\><C-N><cmd>:FloatermHide<CR>")
+					vim.keymap.set("n", "<leader>t", "<cmd>:FloatermToggle<CR>")
+			end
+		},
+
+		{'kevinhwang91/nvim-fFHighlight',
+			config = function()
+					require('fFHighlight').setup({})
+			end
+		},
+
+		{'numToStr/Comment.nvim',
+			opts = {
+				toggler = { 
+					line = "<leader>c",
+				},
+				opleader = {
+					line = "<leader>c",
+				}
+			}
+
+
+		},
+
+
 
 	},
-	-- Configure any other settings here. See the documentation for more details.
-	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "habamax" } },
-	-- automatically check for plugin updates
 	checker = { enabled = true },
 })
 
