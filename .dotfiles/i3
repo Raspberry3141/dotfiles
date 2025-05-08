@@ -1,4 +1,5 @@
-#set $mod Mod3
+set $mod Mod4
+set $mod2 Mod5
 gaps inner 0
 #gaps inner 4
 font pango:monospace 8
@@ -16,9 +17,9 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86MonBrightnessUp exec "brightnessctl set 2%+";
 bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-";
-bindsym Mod4+Control+space focus mode_toggle
-bindsym Mod4+shift+minus move scratchpad
-bindsym Mod4+minus scratchpad show
+bindsym $mod+Control+space focus mode_toggle
+bindsym $mod+shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
 bindsym F10 exec maim ~/tempScreenShot.png
 
 # class                 border  backgr. text    indicator child_border
@@ -46,47 +47,47 @@ set $down l
 set $left j
 set $right semicolon
 
-# floating_modifier mod4
+# floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym mod4+z exec alacritty;
-bindsym mod4+x exec firefox;
-#bindsym mod4+c exec alacritty -e; 
-bindsym mod4+q kill
-bindsym mod4+shift+w exec nmcli con up Birds5GHz
-bindsym mod4+control+w exec nmcli con down Birds5GHz
+bindsym $mod+z exec alacritty;
+bindsym $mod+x exec firefox;
+#bindsym $mod+c exec alacritty -e; 
+bindsym $mod+q kill
+bindsym $mod+shift+w exec nmcli con up Birds5GHz
+bindsym $mod+control+w exec nmcli con down Birds5GHz
 
-bindsym mod4+e exec --no-startup-id dmenu_run
+bindsym $mod+e exec --no-startup-id dmenu_run
 
-bindsym Mod4+$left focus left
-bindsym Mod4+$down focus down
-bindsym Mod4+$up focus up
-bindsym Mod4+$right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # alternatively, you can use the cursor keys:
-bindsym Mod4+Left focus left
-bindsym Mod4+Down focus down
-bindsym Mod4+Up focus up
-bindsym Mod4+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
-bindsym Mod4+Shift+$left move left
-bindsym Mod4+Shift+$down move down
-bindsym Mod4+Shift+$up move up
-bindsym Mod4+Shift+$right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
-bindsym Mod4+Shift+Left move left
-bindsym Mod4+Shift+Down move down
-bindsym Mod4+Shift+Up move up
-bindsym Mod4+Shift+Right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
-bindsym mod4+h split h
-bindsym mod4+v split v
+bindsym $mod+h split h
+bindsym $mod+v split v
 
-bindsym mod4+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
-bindsym Mod4+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle
 
-bindsym Mod4+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 set $ws1 "1"
 set $ws2 "2"
@@ -99,44 +100,44 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-bindsym Mod4+1 workspace number $ws1
-bindsym Mod4+2 workspace number $ws2
-bindsym Mod4+3 workspace number $ws3
-bindsym Mod4+4 workspace number $ws4
-bindsym Mod4+5 workspace number $ws5
-bindsym Mod4+6 workspace number $ws6
-bindsym Mod4+Shift+7 workspace number $ws7
-bindsym Mod4+Shift+8 workspace number $ws8
-bindsym Mod4+Shift+9 workspace number $ws9
-bindsym Mod4+Shift+0 workspace number $ws10
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+Shift+7 workspace number $ws7
+bindsym $mod+Shift+8 workspace number $ws8
+bindsym $mod+Shift+9 workspace number $ws9
+bindsym $mod+Shift+0 workspace number $ws10
 
-bindsym Mod4+Control+1 move container to workspace number $ws1
-bindsym Mod4+Control+2 move container to workspace number $ws2
-bindsym Mod4+Control+3 move container to workspace number $ws3
-bindsym Mod4+Control+4 move container to workspace number $ws4
-bindsym Mod4+Control+5 move container to workspace number $ws5
-bindsym Mod4+Control+6 move container to workspace number $ws6
-bindsym Mod4+Control+7 move container to workspace number $ws7
-bindsym Mod4+Control+8 move container to workspace number $ws8
-bindsym Mod4+Control+9 move container to workspace number $ws9
-bindsym Mod4+Control+0 move container to workspace number $ws10
+bindsym $mod+Control+1 move container to workspace number $ws1
+bindsym $mod+Control+2 move container to workspace number $ws2
+bindsym $mod+Control+3 move container to workspace number $ws3
+bindsym $mod+Control+4 move container to workspace number $ws4
+bindsym $mod+Control+5 move container to workspace number $ws5
+bindsym $mod+Control+6 move container to workspace number $ws6
+bindsym $mod+Control+7 move container to workspace number $ws7
+bindsym $mod+Control+8 move container to workspace number $ws8
+bindsym $mod+Control+9 move container to workspace number $ws9
+bindsym $mod+Control+0 move container to workspace number $ws10
 # reload the configuration file
 
-# bindsym Mod4+Shift+c reload
-bindsym Mod4+Shift+r restart
-bindsym Mod4+Shift+e exit 
-# bindsym Mod4+Shift+l exec --no-startup-id i3lock
-bindsym Mod4+Shift+h exec systemctl hibernate
+# bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exit 
+# bindsym $mod+Shift+l exec --no-startup-id i3lock
+bindsym $mod+Shift+h exec systemctl hibernate
 
-bindsym Mod4+Control+$left       resize shrink width 10 px or 10 ppt
-bindsym Mod4+Control+$down       resize shrink height 10 px or 10 ppt
-bindsym Mod4+Control+$up         resize grow height 10 px or 10 ppt
-bindsym Mod4+Control+$right      resize grow width 10 px or 10 ppt
+bindsym $mod+Control+$left       resize shrink width 10 px or 10 ppt
+bindsym $mod+Control+$down       resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+$up         resize grow height 10 px or 10 ppt
+bindsym $mod+Control+$right      resize grow width 10 px or 10 ppt
 
-bindsym Left+Mod4+control        resize shrink width 10 px or 10 ppt
-bindsym Down+Mod4+control        resize shrink height 10 px or 10 ppt
-bindsym Up+Mod4+control          resize grow height 10 px or 10 ppt
-bindsym Right+Mod4+control       resize grow width 10 px or 10 ppt
+bindsym Left+$mod+control        resize shrink width 10 px or 10 ppt
+bindsym Down+$mod+control        resize shrink height 10 px or 10 ppt
+bindsym Up+$mod+control          resize grow height 10 px or 10 ppt
+bindsym Right+$mod+control       resize grow width 10 px or 10 ppt
 
 mode "resize" {
         bindsym $left       resize shrink width 10 px or 10 ppt
@@ -150,19 +151,134 @@ mode "resize" {
         bindsym Right       resize grow width 10 px or 10 ppt
 
         bindsym Escape mode "default"
-        bindsym Mod4+r mode "default"
+        bindsym $mod+r mode "default"
 }
-bindsym Mod4+r mode "resize"
+bindsym $mod+r mode "resize"
 
 
 bar {
 	status_command i3status
 	mode hide
 	hidden_state hide
-	modifier Mod4
+	modifier $mod
 	position bottom
 	i3bar_command i3bar --transparency
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
     font pango:DejaVu Sans Mono 10
 	i3bar_command i3bar --transparency
+}
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+
+bindsym $mod2+Control+space focus mode_toggle
+bindsym $mod2+shift+minus move scratchpad
+bindsym $mod2+minus scratchpad show
+
+bindsym $mod2+z exec alacritty;
+bindsym $mod2+x exec firefox;
+#bindsym $mod+c exec alacritty -e; 
+bindsym $mod2+q kill
+bindsym $mod2+shift+w exec nmcli con up Birds5GHz
+bindsym $mod2+control+w exec nmcli con down Birds5GHz
+
+bindsym $mod2+e exec --no-startup-id dmenu_run
+
+bindsym $mod2+$left focus left
+bindsym $mod2+$down focus down
+bindsym $mod2+$up focus up
+bindsym $mod2+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod2+Left focus left
+bindsym $mod2+Down focus down
+bindsym $mod2+Up focus up
+bindsym $mod2+Right focus right
+
+bindsym $mod2+Shift+$left move left
+bindsym $mod2+Shift+$down move down
+bindsym $mod2+Shift+$up move up
+bindsym $mod2+Shift+$right move right
+
+bindsym $mod2+Shift+Left move left
+bindsym $mod2+Shift+Down move down
+bindsym $mod2+Shift+Up move up
+bindsym $mod2+Shift+Right move right
+
+bindsym $mod2+h split h
+bindsym $mod2+v split v
+
+bindsym $mod2+f fullscreen toggle
+
+bindsym $mod2+Shift+space floating toggle
+
+bindsym $mod2+space focus mode_toggle
+
+bindsym $mod2+1 workspace number $ws1
+bindsym $mod2+2 workspace number $ws2
+bindsym $mod2+3 workspace number $ws3
+bindsym $mod2+4 workspace number $ws4
+bindsym $mod2+5 workspace number $ws5
+bindsym $mod2+6 workspace number $ws6
+bindsym $mod2+Shift+7 workspace number $ws7
+bindsym $mod2+Shift+8 workspace number $ws8
+bindsym $mod2+Shift+9 workspace number $ws9
+bindsym $mod2+Shift+0 workspace number $ws10
+
+bindsym $mod2+Control+1 move container to workspace number $ws1
+bindsym $mod2+Control+2 move container to workspace number $ws2
+bindsym $mod2+Control+3 move container to workspace number $ws3
+bindsym $mod2+Control+4 move container to workspace number $ws4
+bindsym $mod2+Control+5 move container to workspace number $ws5
+bindsym $mod2+Control+6 move container to workspace number $ws6
+bindsym $mod2+Control+7 move container to workspace number $ws7
+bindsym $mod2+Control+8 move container to workspace number $ws8
+bindsym $mod2+Control+9 move container to workspace number $ws9
+bindsym $mod2+Control+0 move container to workspace number $ws10
+# reload the configuration file
+
+# bindsym $mod+Shift+c reload
+bindsym $mod2+Shift+r restart
+bindsym $mod2+Shift+e exit 
+# bindsym $mod+Shift+l exec --no-startup-id i3lock
+bindsym $mod2+Shift+h exec systemctl hibernate
+
+bindsym $mod2+Control+$left       resize shrink width 10 px or 10 ppt
+bindsym $mod2+Control+$down       resize shrink height 10 px or 10 ppt
+bindsym $mod2+Control+$up         resize grow height 10 px or 10 ppt
+bindsym $mod2+Control+$right      resize grow width 10 px or 10 ppt
+
+bindsym Left+$mod2+control        resize shrink width 10 px or 10 ppt
+bindsym Down+$mod2+control        resize shrink height 10 px or 10 ppt
+bindsym Up+$mod2+control          resize grow height 10 px or 10 ppt
+bindsym Right+$mod2+control       resize grow width 10 px or 10 ppt
+
+mode "resize" {
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize shrink height 10 px or 10 ppt
+        bindsym $up         resize grow height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize shrink height 10 px or 10 ppt
+        bindsym Up          resize grow height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        bindsym Escape mode "default"
+        bindsym $mod2+r mode "default"
 }
