@@ -283,7 +283,7 @@ require("lazy").setup({
 			opts = {
 				close = true,
 				keys = {
-					["<"] = { escape = false ,close = true, pair = "<>", disabled_filetypes = {"c"} },
+					["<"] = { escape = false ,close = true, pair = "<>", disabled_filetypes = {"c","cpp","cc"} },
 				}
 			},
 
