@@ -70,7 +70,7 @@ require("lazy").setup({
 
 			config = function()
 				require("tokyonight").setup({
-					style = "moon", 
+					style = "moon",
 				})
 				vim.cmd.colorscheme "tokyonight"
 			end},
@@ -214,7 +214,7 @@ require("lazy").setup({
 						vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 						vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 						vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-						vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+						vim.keymap.set('n', 'gA', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 					end,
 				})
 			end
@@ -283,7 +283,7 @@ require("lazy").setup({
 			opts = {
 				close = true,
 				keys = {
-					["<"] = { escape = false ,close = true, pair = "<>", disabled_filetypes = {"c"} },
+					["<"] = { escape = false ,close = true, pair = "<>", disabled_filetypes = {"c","cpp","cc"} },
 				}
 			},
 

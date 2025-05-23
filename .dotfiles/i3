@@ -20,7 +20,7 @@ bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-";
 bindsym $mod+Control+space focus mode_toggle
 bindsym $mod+shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-bindsym F10 exec maim ~/tempScreenShot.png
+bindsym F10 exec maim ~/Downloads/tempScreenShot.png
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #ffffff   #ffffff
@@ -106,10 +106,10 @@ bindsym $mod+3 workspace number $ws3
 bindsym $mod+4 workspace number $ws4
 bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
-bindsym $mod+Shift+7 workspace number $ws7
-bindsym $mod+Shift+8 workspace number $ws8
-bindsym $mod+Shift+9 workspace number $ws9
-bindsym $mod+Shift+0 workspace number $ws10
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
 
 bindsym $mod+Control+1 move container to workspace number $ws1
 bindsym $mod+Control+2 move container to workspace number $ws2
