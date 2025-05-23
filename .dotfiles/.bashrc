@@ -20,6 +20,7 @@ fd() {
 	if [ -n "$GITPATH" ]; then
 		cd "$GITPATH"
 		nvim "$GITPATH"
+		history -s "nvim ."
 	fi
 }
 
