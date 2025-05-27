@@ -152,13 +152,13 @@ require("lazy").setup({
 				},
 				mapping = cmp.mapping.preset.insert({
 						["<Tab>"] = cmp.mapping.select_next_item(),
+						["<s-Tab>"] = cmp.mapping.select_prev_item(),
 						["<Enter>"] = cmp.mapping.confirm({select = true}),
 					}),
 
 				})
 			end
-		},         
-		
+		},
 
 		{"neovim/nvim-lspconfig",
 			config = function()
@@ -176,7 +176,6 @@ require("lazy").setup({
 				-- Configure error/warnings interface
 				vim.diagnostic.config({
 					virtual_text = true,
-					
 					severity_sort = true,
 					float = {
 						style = 'minimal',
@@ -262,20 +261,14 @@ require("lazy").setup({
 			dependencies = { "nvim-lua/plenary.nvim" },
 			config = function()
 				local harpoon = require("harpoon")
-				-- REQUIRED
 				harpoon:setup()
-				-- REQUIRED
 				vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
 				vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 				vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
 				vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
 				vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
 				vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
-
-				-- Toggle previous & next buffers stored within Harpoon list
-				vim.keymap.set("n", "<C-P>", function() harpoon:list():prev() end)
-				vim.keymap.set("n", "<C-N>", function() harpoon:list():next() end)
-
+				vim.keymap.set("n", "<leader>5", function() harpoon:list():select(5) end)
 			end
 		},
 
