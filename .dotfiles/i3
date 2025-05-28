@@ -194,8 +194,8 @@ bindsym $mod2+z exec alacritty;
 bindsym $mod2+x exec firefox;
 #bindsym $mod+c exec alacritty -e; 
 bindsym $mod2+q kill
-bindsym $mod2+shift+w exec nmcli con up Birds5GHz
-bindsym $mod2+control+w exec nmcli con down Birds5GHz
+bindsym $mod2+control+w exec nmcli con up Birds5GHz
+bindsym $mod2+shift+w exec nmcli con down Birds5GHz
 
 bindsym $mod2+e exec --no-startup-id dmenu_run
 

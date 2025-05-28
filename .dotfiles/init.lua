@@ -95,15 +95,15 @@ require("lazy").setup({
 
 		{"nvim-treesitter/nvim-treesitter",
 			build = ":TSUpdate",
-			config = function () 
+			config = function ()
 				local configs = require("nvim-treesitter.configs")
 
 				configs.setup({
-					ensure_installed = { 
+					ensure_installed = {
 						"c", "python", "lua", "vim", "vimdoc", "heex", "javascript", "html" },
 					sync_install = false,
 					highlight = { enable = true },
-					indent = { enable = true },  
+					indent = { enable = true },
 				})
 			end},
 
@@ -136,10 +136,10 @@ require("lazy").setup({
 
 		{'hrsh7th/nvim-cmp',
 		dependencies = {
-			{'hrsh7th/cmp-nvim-lsp'},    
-			{'hrsh7th/cmp-buffer'},     
-			{'hrsh7th/cmp-path'},      
-			{'hrsh7th/cmp-nvim-lua'},    
+			{'hrsh7th/cmp-nvim-lsp'},
+			{'hrsh7th/cmp-buffer'},
+			{'hrsh7th/cmp-path'},
+			{'hrsh7th/cmp-nvim-lua'},
 		},
 		config = function()
 			local cmp = require('cmp')
@@ -282,20 +282,6 @@ require("lazy").setup({
 
 		},
 
-		{
-			"folke/trouble.nvim",
-			enabled = {false},
-			opts = {}, 
-			cmd = "Trouble",
-			keys = {
-				{
-					"<leader>x",
-					"<cmd>trouble diagnostics toggle<cr>",
-					desc = "diagnostics (trouble)",
-				},
-			},
-		},
-
 		{"rrethy/vim-illuminate"},
 
 		{"voldikss/vim-floaterm",
@@ -317,7 +303,8 @@ require("lazy").setup({
 
 		{'numToStr/Comment.nvim',
 			opts = {
-				toggler = { 
+				toggler = {
+
 					line = "<leader>c",
 				},
 				opleader = {
