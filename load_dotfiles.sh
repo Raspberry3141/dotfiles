@@ -1,9 +1,9 @@
 #!/usr/biin/bash
 
+mkdir --parents "$HOME";
 function load {
 	#1. make the directory necessary
 	#2. cp files to the location and rename
-	mkdir --parents "$1";
 	cp "$2" "$1/$3";
 }
 
