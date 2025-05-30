@@ -1,7 +1,5 @@
 set $mod Mod4
 set $mod2 Mod5
-gaps inner 0
-#gaps inner 4
 font pango:monospace 8
 
 exec --no-startup-id xset r rate 190 25
@@ -23,7 +21,8 @@ bindsym $mod+minus scratchpad show
 bindsym F10 exec maim ~/Downloads/tempScreenShot.png
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #ffffff   #ffffff
+client.focused          #4c7899 #285577 #ffffff #ffffff   #000000
+# client.focused          #4c7899 #285577 #ffffff #ffffff   #ffffff
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -52,7 +51,6 @@ tiling_drag modifier titlebar
 
 bindsym $mod+z exec alacritty;
 bindsym $mod+x exec firefox;
-#bindsym $mod+c exec alacritty -e; 
 bindsym $mod+q kill
 bindsym $mod+shift+w exec nmcli con up Birds5GHz
 bindsym $mod+control+w exec nmcli con down Birds5GHz
