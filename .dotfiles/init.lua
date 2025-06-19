@@ -10,8 +10,6 @@ vim.opt.smartcase = true
 vim.opt.scrolloff = 15
 vim.opt.signcolumn = 'yes'
 
-vim.keymap.set('n', '<leader>w', '<C-w><C-w>', { desc = 'focus next window' })
-vim.keymap.set('n', '<leader>v', '<C-w><C-v>', { desc = 'v-split window' })
 vim.keymap.set('n','<C-c>','<cmd>nohlsearch<cr>')
 vim.api.nvim_create_autocmd({'BufRead'}, {
 	desc = 'move cursor to last changed pos when reading a buf',
