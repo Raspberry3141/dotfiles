@@ -50,8 +50,8 @@ tiling_drag modifier titlebar
 bindsym $mod+z exec alacritty;
 bindsym $mod+x exec firefox;
 bindsym $mod+q kill
-bindsym $mod+shift+w exec nmcli con up Birds5GHz
-bindsym $mod+control+w exec nmcli con down Birds5GHz
+# bindsym $mod+shift+w exec nmcli con up Birds5GHz
+# bindsym $mod+control+w exec nmcli con down Birds5GHz
 
 bindsym $mod+e exec --no-startup-id dmenu_run
 
