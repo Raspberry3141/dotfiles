@@ -9,7 +9,7 @@
   cursor = "#c7c191"
 
 [font]
-  size = 14
+  size = 12
   normal = { family = "Source Code Pro", style = "Regular"}
   bold = { family = "Source Code Pro", style = "Bold"}
   italic = { family = "Source Code Pro", style = "Italic"}
