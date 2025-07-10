@@ -9,19 +9,34 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.scrolloff = 15
 vim.opt.signcolumn = 'yes'
-
 vim.keymap.set('n','<C-c>','<cmd>nohlsearch<cr>')
+vim.keymap.set('n','<leader>e','<cmd>edit .<cr>')
+local term_buff_number = nil
+vim.keymap.set('t','<C-c>','<C-\\><C-N><C-o>')
+vim.keymap.set({'n'},'<leader>t',function ()
+	if term_buff_number==nil then
+		last_bufnr = vim.api.nvim_get_current_buf()
+		term_buff_number = vim.api.nvim_create_buf(true,false)
+		vim.api.nvim_set_current_buf(term_buff_number)
+		vim.fn.termopen(os.getenv("SHELL"))
+		vim.cmd("startinsert")
+	else
+		last_bufnr = vim.api.nvim_get_current_buf()
+		vim.api.nvim_set_current_buf(term_buff_number)
+		vim.cmd("startinsert")
+	end
+end)
+
 vim.api.nvim_create_autocmd({'BufRead'}, {
 	desc = 'move cursor to last changed pos when reading a buf',
 	callback = function()
-	if vim.api.nvim_buf_get_mark(0, ".")[1] ==0 and vim.api.nvim_buf_get_mark(0, ".")[2] == 0 then
-		return
-	elseif vim.api.nvim_buf_get_mark(0, ".")[1] >= vim.api.nvim_buf_line_count(0) then
-		return
-	end
-	vim.api.nvim_win_set_cursor(0,{vim.api.nvim_buf_get_mark(0, ".")[1],vim.api.nvim_buf_get_mark(0, ".")[2]})
-end})
-
+		if vim.api.nvim_buf_get_mark(0, ".")[1] ==0 and vim.api.nvim_buf_get_mark(0, ".")[2] == 0 then
+			return
+		elseif vim.api.nvim_buf_get_mark(0, ".")[1] >= vim.api.nvim_buf_line_count(0) then
+			return
+		end
+		vim.api.nvim_win_set_cursor(0,{vim.api.nvim_buf_get_mark(0, ".")[1],vim.api.nvim_buf_get_mark(0, ".")[2]})
+	end})
 vim.schedule(function()
 	vim.opt.clipboard = 'unnamedplus'
 end)
@@ -64,6 +79,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{"folke/tokyonight.nvim",
+			enabled = false,
 			lazy = false,
 
 			config = function()
@@ -206,10 +222,10 @@ require("lazy").setup({
 						vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 						vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 						vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-						vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+						vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 						vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 						vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
-						vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+						vim.keymap.set('n', 'ge', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
 						vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
 						vim.keymap.set('n', 'gA', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 					end,
@@ -245,7 +261,7 @@ require("lazy").setup({
 									workspace = {
 										library = {vim.env.VIMRUNTIME},
 									},
-								},
+							t},
 							},
 						})
 					}
@@ -281,17 +297,6 @@ require("lazy").setup({
 		},
 
 		{"rrethy/vim-illuminate"},
-
-		{"voldikss/vim-floaterm",
-			init = function()
-				vim.g.floaterm_autoclose = 2
-			end,
-
-			config = function()
-					vim.keymap.set("t", "<C-c>", "<C-\\><C-N><cmd>:FloatermHide<CR>")
-					vim.keymap.set("n", "<leader>t", "<cmd>:FloatermToggle<CR>")
-			end
-		},
 
 		{'kevinhwang91/nvim-fFHighlight',
 			config = function()

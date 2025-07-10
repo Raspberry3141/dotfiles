@@ -15,7 +15,6 @@
   italic = { family = "Source Code Pro", style = "Italic"}
   bold_italic = { family = "Source Code Pro", style = "Bold Italic"}
 
-
 # Normal colors
 [colors.normal]
 black   = '#1c1c1c'
@@ -48,3 +47,6 @@ blue    = '#556b79'
 magenta = '#6e4962'
 cyan    = '#5c8482'
 white   = '#828282'
+
+[keyboard]
+# bindings = [{key = "F",mods = "Control",command = {program = "/usr/bin/bash", args = ["-c", "/home/admin/scripts/print_power_settings.sh"]}}]
