@@ -78,17 +78,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
-		{"folke/tokyonight.nvim",
-			enabled = false,
-			lazy = false,
-
-			config = function()
-				require("tokyonight").setup({
-					style = "moon",
-				})
-				vim.cmd.colorscheme "tokyonight"
-			end},
-
 		{'nvim-telescope/telescope.nvim', tag = '0.1.8',
 			dependencies = { 'nvim-lua/plenary.nvim' },
 			config = function()

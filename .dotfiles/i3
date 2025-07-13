@@ -47,8 +47,8 @@ set $right semicolon
 # floating_modifier $mod
 tiling_drag modifier titlebar
 
-bindsym $mod+z exec alacritty;
-bindsym $mod+x exec firefox;
+bindsym $mod+f exec alacritty;
+bindsym $mod+d exec firefox;
 bindsym $mod+q kill
 # bindsym $mod+shift+w exec nmcli con up Birds5GHz
 # bindsym $mod+control+w exec nmcli con down Birds5GHz
@@ -79,7 +79,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+h split h
 bindsym $mod+v split v
 
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 bindsym $mod+Shift+space floating toggle
 
