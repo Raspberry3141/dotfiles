@@ -110,33 +110,6 @@ require("lazy").setup({
 				})
 			end},
 
-		{"nvim-tree/nvim-tree.lua",
-			version = "*",
-			lazy = false,
-			dependencies = {
-				"nvim-tree/nvim-web-devicons",
-			},
-			config = function()
-				local function my_on_attach(bufnr)
-					local api = require "nvim-tree.api"
-
-					local function opts(desc)
-						return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-					end
-					-- default mappings
-					api.config.mappings.default_on_attach(bufnr)
-
-				end
-				--UNCOMMENT TO ENABLE TREE
-				--vim.keymap.set('n', '<leader>r', ":NvimTreeToggle<cr>",{desc = "toggle tree"})
-				-- pass to setup along with your other options
-				--require("nvim-tree").setup {
-					---
-				--	on_attach = my_on_attach,
-					---
-				--}
-			end},
-
 		{'hrsh7th/nvim-cmp',
 		dependencies = {
 			{'hrsh7th/cmp-nvim-lsp'},
@@ -250,7 +223,7 @@ require("lazy").setup({
 									workspace = {
 										library = {vim.env.VIMRUNTIME},
 									},
-							t},
+								},
 							},
 						})
 					}
