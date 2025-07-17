@@ -7,7 +7,6 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.scrolloff = 15
 vim.opt.signcolumn = 'yes'
 vim.keymap.set('n','<C-c>','<cmd>nohlsearch<cr>')
 vim.keymap.set('n','<leader>e','<cmd>edit .<cr>')
@@ -15,13 +14,11 @@ local term_buff_number = nil
 vim.keymap.set('t','<C-c>','<C-\\><C-N><C-o>')
 vim.keymap.set({'n'},'<leader>t',function ()
 	if term_buff_number==nil then
-		last_bufnr = vim.api.nvim_get_current_buf()
 		term_buff_number = vim.api.nvim_create_buf(true,false)
 		vim.api.nvim_set_current_buf(term_buff_number)
 		vim.fn.termopen(os.getenv("SHELL"))
 		vim.cmd("startinsert")
 	else
-		last_bufnr = vim.api.nvim_get_current_buf()
 		vim.api.nvim_set_current_buf(term_buff_number)
 		vim.cmd("startinsert")
 	end
@@ -162,8 +159,8 @@ require("lazy").setup({
 					},
 					signs = {
 						text = {
-							[vim.diagnostic.severity.ERROR] = '✘',
-							[vim.diagnostic.severity.WARN] = '▲', [vim.diagnostic.severity.HINT] = '⚑', [vim.diagnostic.severity.INFO] = '»', }, }, })
+							[vim.diagnostic.severity.ERROR] = 'E',
+							[vim.diagnostic.severity.WARN] = 'W', [vim.diagnostic.severity.HINT] = 'H', [vim.diagnostic.severity.INFO] = 'I', }, }, })
 				-- Add cmp_nvim_lsp capabilities settings to lspconfig
 				-- This should be executed before you configure any language server
 				local lspconfig_defaults = require('lspconfig').util.default_config
