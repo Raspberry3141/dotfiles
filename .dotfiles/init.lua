@@ -75,6 +75,13 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
+		{ "ellisonleao/gruvbox.nvim",
+		priority = 1000 ,
+		config = true,
+		config = function ()
+			vim.o.background = "dark" 
+			vim.cmd([[colorscheme gruvbox]])
+		end},
 		{'nvim-telescope/telescope.nvim', tag = '0.1.8',
 			dependencies = { 'nvim-lua/plenary.nvim' },
 			config = function()
@@ -82,15 +89,15 @@ require("lazy").setup({
 				vim.keymap.set('n', '<leader>f', function()
 					builtin.find_files()
 				end
-				, { desc = 'Telescope find files' })
+					, { desc = 'Telescope find files' })
 				require('telescope').setup({
-				pickers = {
-					find_files = {
-						-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-						find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
-					},
-				}
-			})
+					pickers = {
+						find_files = {
+							-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+							find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+						},
+					}
+				})
 			end},
 
 		{"nvim-treesitter/nvim-treesitter",
@@ -108,22 +115,22 @@ require("lazy").setup({
 			end},
 
 		{'hrsh7th/nvim-cmp',
-		dependencies = {
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'hrsh7th/cmp-buffer'},
-			{'hrsh7th/cmp-path'},
-			{'hrsh7th/cmp-nvim-lua'},
-		},
-		config = function()
-			local cmp = require('cmp')
+			dependencies = {
+				{'hrsh7th/cmp-nvim-lsp'},
+				{'hrsh7th/cmp-buffer'},
+				{'hrsh7th/cmp-path'},
+				{'hrsh7th/cmp-nvim-lua'},
+			},
+			config = function()
+				local cmp = require('cmp')
 
-			cmp.setup({
-				sources = {
-					{name = 'path'},
-					{name = 'nvim_lsp'},
-					{name = 'buffer', keyword_length = 3},
-				},
-				mapping = cmp.mapping.preset.insert({
+				cmp.setup({
+					sources = {
+						{name = 'path'},
+						{name = 'nvim_lsp'},
+						{name = 'buffer', keyword_length = 3},
+					},
+					mapping = cmp.mapping.preset.insert({
 						["<Tab>"] = cmp.mapping.select_next_item(),
 						["<s-Tab>"] = cmp.mapping.select_prev_item(),
 						["<Enter>"] = cmp.mapping.confirm({select = true}),
@@ -259,7 +266,7 @@ require("lazy").setup({
 
 		{'kevinhwang91/nvim-fFHighlight',
 			config = function()
-					require('fFHighlight').setup({})
+				require('fFHighlight').setup({})
 			end
 		},
 
