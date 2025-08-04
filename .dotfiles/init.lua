@@ -76,12 +76,12 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{ "ellisonleao/gruvbox.nvim",
-		priority = 1000 ,
-		config = true,
-		config = function ()
-			vim.o.background = "dark" 
-			vim.cmd([[colorscheme gruvbox]])
-		end},
+			priority = 1000 ,
+			config = true,
+			config = function ()
+				vim.o.background = "dark" 
+				vim.cmd([[colorscheme gruvbox]])
+			end},
 		{'nvim-telescope/telescope.nvim', tag = '0.1.8',
 			dependencies = { 'nvim-lua/plenary.nvim' },
 			config = function()
@@ -252,16 +252,6 @@ require("lazy").setup({
 			end
 		},
 
-		{'m4xshen/autoclose.nvim',
-			opts = {
-				close = true,
-				keys = {
-					["<"] = { escape = false ,close = true, pair = "<>", disabled_filetypes = {"c","cpp","cc"} },
-				}
-			},
-
-		},
-
 		{"rrethy/vim-illuminate"},
 
 		{'kevinhwang91/nvim-fFHighlight',
@@ -283,7 +273,6 @@ require("lazy").setup({
 
 
 		},
-
 
 	},
 	install = { colorscheme = { "habamax" } },
