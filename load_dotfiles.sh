@@ -1,17 +1,21 @@
 #!/usr/biin/bash
 
-mkdir --parents "$HOME";
+# make sure to cd in the directory containing this file before running it
+mkdir --parents "$HOME/.config/";
+CONFIGLOC="$HOME/.config/"
+
 function load {
-	#1. make the directory necessary
-	#2. cp files to the location and rename
-	cp "$2" "$1/$3";
+	ln -s "$1" "$2";
 }
 
-load "$HOME" "$HOME/.dotfiles/.bash_profile" ".bash_profile"
-load "$HOME" "$HOME/.dotfiles/.bashrc" ".bashrc"
-load "$HOME" "$HOME/.dotfiles/.xinit" ".xinit"
-load "$HOME" "$HOME/.dotfiles/.Xresources" ".Xresources"
-load "$HOME" "$HOME/.dotfiles/i3" "config"
-load "$HOME" "$HOME/.dotfiles/i3status" "config"
-load "$HOME" "$HOME/.dotfiles/init.lua" "init.lua"
-load "$HOME" "$HOME/.dotfiles/alacritty" "alacritty.toml"
+load ".dotfiles/.bash_profile" "$HOME/.bash_profile"
+load ".dotfiles/.bashrc" "$HOME/.bashrc"
+load ".dotfiles/.xinit" "$HOME/.xinitrc"
+load ".dotfiles/.Xresources" "$HOME/.Xresources"
+load ".dotfiles/.Xmodmap" "$HOME/.Xmodmap"
+
+load ".dotfiles/.i3" "$CONFIGLOC/i3/config"
+load ".dotfiles/.i3status" "$CONFIGLOC/i3status/config"
+load ".dotfiles/init.lua" "$CONFIGLOC/nvim/init.lua"
+load ".dotfiles/alacritty" "$CONFIGLOC/alacritty/alacritty.toml"
+
