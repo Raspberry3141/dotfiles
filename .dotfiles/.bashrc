@@ -23,5 +23,7 @@ fd() {
 		history -s "nvim ."
 	fi
 }
-
+h() {
+	history | cut -c 8- | fzf | xclip -sel clip
+}
 . "$HOME/.local/bin/env"
