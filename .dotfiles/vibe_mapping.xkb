@@ -1,0 +1,21 @@
+xkb_keymap {
+    xkb_keycodes  { include "evdev+aliases(qwerty)" };
+    xkb_types     { include "complete" };
+    xkb_compat    { include "complete" };
+    xkb_symbols   {
+        include "pc+us"
+
+        // Right Alt → Enter
+        key <RALT> {
+            type= "ONE_LEVEL",
+            symbols[Group1]= [ Return ]
+        };
+
+        // Caps Lock → Backspace
+        key <CAPS> {
+            type= "ONE_LEVEL",
+            symbols[Group1]= [ BackSpace ]
+        };
+    };
+    xkb_geometry  { include "pc(pc105)" };
+};
