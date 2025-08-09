@@ -10,12 +10,12 @@ function load {
 	echo "making a symbolic link from $1 to $2"
 }
 
-
 load ".dotfiles/.bash_profile" "$HOME/.bash_profile"
 load ".dotfiles/.bashrc" "$HOME/.bashrc"
 load ".dotfiles/.xinit" "$HOME/.xinitrc"
 load ".dotfiles/.Xresources" "$HOME/.Xresources"
 load ".dotfiles/.Xmodmap" "$HOME/.Xmodmap"
+load ".dotfiles/.vibe_mapping" "$HOME/.Xkeymap"
 
 load ".dotfiles/i3" "$CONFIGLOC/i3/config"
 load ".dotfiles/i3status" "$CONFIGLOC/i3status/config"

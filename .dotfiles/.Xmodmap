@@ -251,3 +251,7 @@ clear mod5
 clear mod1
 add mod1 = Alt_R ISO_Level3_Shift
 add mod5 = Alt_L
+
+keycode 108 = Return NoSymbol Return
+! keycode  36 = Alt_R NoSymbol Alt_R
+keycode 105 = BackSpace BackSpace BackSpace BackSpace

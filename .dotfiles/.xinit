@@ -2,3 +2,4 @@
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 exec i3
 xset r rate 200 25
+test -f ~/.Xkeymap && xkbcomp ~/.Xkeymap $DISPLAY
