@@ -247,11 +247,3 @@ keycode 253 = XF86DisplayOff NoSymbol XF86DisplayOff
 keycode 254 = XF86WWAN NoSymbol XF86WWAN
 keycode 255 = XF86RFKill NoSymbol XF86RFKill
 
-clear mod5
-clear mod1
-add mod1 = Alt_R ISO_Level3_Shift
-add mod5 = Alt_L
-
-keycode 108 = Return NoSymbol Return
-! keycode  36 = Alt_R NoSymbol Alt_R
-keycode 105 = BackSpace BackSpace BackSpace BackSpace

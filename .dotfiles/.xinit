@@ -1,5 +1,4 @@
 [[  -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
-[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+test -f ~/.Xkeymap && xkbcomp ~/.Xkeymap $DISPLAY
 exec i3
 xset r rate 200 25
-test -f ~/.Xkeymap && xkbcomp ~/.Xkeymap $DISPLAY
