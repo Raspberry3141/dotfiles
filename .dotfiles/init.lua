@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.statuscolumn = " %s %l %r "
+vim.opt.statuscolumn = "%s %l %r "
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.ignorecase = true
@@ -23,6 +23,7 @@ vim.keymap.set({'n'},'<leader>t',function ()
 		vim.cmd("startinsert")
 	end
 end)
+
 
 vim.api.nvim_create_autocmd({'BufRead'}, {
 	desc = 'move cursor to last changed pos when reading a buf',
@@ -270,8 +271,6 @@ require("lazy").setup({
 					line = "<leader>c",
 				}
 			}
-
-
 		},
 
 	},
@@ -281,4 +280,3 @@ require("lazy").setup({
 		notification = false
 	},
 })
-

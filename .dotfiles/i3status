@@ -8,7 +8,7 @@
 
 general {
         colors = true
-        interval = 5
+        interval = 1
 }
 
 #order += "ipv6"
@@ -23,7 +23,7 @@ order += "tztime local"
 
 volume master {
         format = "%volume %devicename"
-        format_muted = "♪: muted (%volume)"
+        format_muted = "muted (%volume)"
         device = "default"
         mixer = "Master"
         mixer_idx = 0

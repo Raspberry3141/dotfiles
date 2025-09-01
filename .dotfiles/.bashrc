@@ -12,7 +12,7 @@ f() {
 	OPENPATH=$(fzf | xargs -r)
     if [ -n "$OPENPATH" ]; then
         xdg-open "$OPENPATH"
-        history -s "nvim $(pwd| xargs)/$OPENPATH"
+        history -s "xdg-open $(pwd| xargs)/$OPENPATH"
     fi
 }
 fs() {
