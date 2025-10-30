@@ -8,13 +8,13 @@ vim.opt.tabstop = 4
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
-vim.keymap.set('n','<C-c>','<cmd>nohlsearch<cr>')
-vim.keymap.set('n','<leader>e','<cmd>edit .<cr>')
+vim.keymap.set('n', '<C-c>', '<cmd>nohlsearch<cr>')
+vim.keymap.set('n', '<leader>e', '<cmd>edit .<cr>')
 local term_buff_number = nil
-vim.keymap.set('t','<C-c>','<C-\\><C-N><C-o>')
-vim.keymap.set({'n'},'<leader>t',function ()
-	if term_buff_number==nil then
-		term_buff_number = vim.api.nvim_create_buf(true,false)
+vim.keymap.set('t', '<C-t>', '<C-\\><C-N><C-o>')
+vim.keymap.set({ 'n' }, '<leader>t', function()
+	if term_buff_number == nil then
+		term_buff_number = vim.api.nvim_create_buf(true, false)
 		vim.api.nvim_set_current_buf(term_buff_number)
 		vim.fn.termopen(os.getenv("SHELL"))
 		vim.cmd("startinsert")
@@ -25,37 +25,39 @@ vim.keymap.set({'n'},'<leader>t',function ()
 end)
 
 
-vim.api.nvim_create_autocmd({'BufRead'}, {
+vim.api.nvim_create_autocmd({ 'BufRead' }, {
 	desc = 'move cursor to last changed pos when reading a buf',
 	callback = function()
-		if vim.api.nvim_buf_get_mark(0, ".")[1] ==0 and vim.api.nvim_buf_get_mark(0, ".")[2] == 0 then
+		if vim.api.nvim_buf_get_mark(0, ".")[1] == 0 and vim.api.nvim_buf_get_mark(0, ".")[2] == 0 then
 			return
 		elseif vim.api.nvim_buf_get_mark(0, ".")[1] >= vim.api.nvim_buf_line_count(0) then
 			return
 		end
-		vim.api.nvim_win_set_cursor(0,{vim.api.nvim_buf_get_mark(0, ".")[1],vim.api.nvim_buf_get_mark(0, ".")[2]})
-	end})
+		vim.api.nvim_win_set_cursor(0, { vim.api.nvim_buf_get_mark(0, ".")[1], vim.api.nvim_buf_get_mark(0, ".")[2] })
+	end
+})
+
 vim.schedule(function()
 	vim.opt.clipboard = 'unnamedplus'
 end)
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Flash highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+	desc = 'Flash highlight when yanking (copying) text',
+	group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })
 
-vim.keymap.set('n','<leader>]', function()
-	vim.diagnostic.jump({count = 1, float=true})
+vim.keymap.set('n', '<leader>]', function()
+	vim.diagnostic.jump({ count = 1, float = true })
 end)
 
-vim.keymap.set('n','<leader>[', function()
-	vim.diagnostic.jump({count = -1, float=true})
+vim.keymap.set('n', '<leader>[', function()
+	vim.diagnostic.jump({ count = -1, float = true })
 end)
 
-vim.keymap.set('n','<leader>d', ':lua vim.diagnostic.open_float(nil, { focus = false, })<cr>')
+vim.keymap.set('n', '<leader>d', ':lua vim.diagnostic.open_float(nil, { focus = false, })<cr>')
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -65,7 +67,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	if vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
 			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
+			{ out,                            "WarningMsg" },
 			{ "\nPress any key to exit..." },
 		}, true, {})
 		vim.fn.getchar()
@@ -76,34 +78,40 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
-		{ "ellisonleao/gruvbox.nvim",
-			priority = 1000 ,
+		{
+			"ellisonleao/gruvbox.nvim",
+			priority = 1000,
 			config = true,
-			config = function ()
-				vim.o.background = "dark" 
+			config = function()
+				vim.o.background = "dark"
 				vim.cmd([[colorscheme gruvbox]])
-			end},
-		{'nvim-telescope/telescope.nvim', tag = '0.1.8',
+			end
+		},
+		{
+			'nvim-telescope/telescope.nvim',
+			tag = '0.1.8',
 			dependencies = { 'nvim-lua/plenary.nvim' },
 			config = function()
 				local builtin = require('telescope.builtin')
 				vim.keymap.set('n', '<leader>f', function()
 					builtin.find_files()
 				end
-					, { desc = 'Telescope find files' })
+				, { desc = 'Telescope find files' })
 				require('telescope').setup({
 					pickers = {
 						find_files = {
 							-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-							find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+							find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "--glob", "!**/*.o" },
 						},
 					}
 				})
-			end},
+			end
+		},
 
-		{"nvim-treesitter/nvim-treesitter",
+		{
+			"nvim-treesitter/nvim-treesitter",
 			build = ":TSUpdate",
-			config = function ()
+			config = function()
 				local configs = require("nvim-treesitter.configs")
 
 				configs.setup({
@@ -113,45 +121,47 @@ require("lazy").setup({
 					highlight = { enable = true },
 					indent = { enable = true },
 				})
-			end},
+			end
+		},
 
-		{'hrsh7th/nvim-cmp',
+		{
+			'hrsh7th/nvim-cmp',
 			dependencies = {
-				{'hrsh7th/cmp-nvim-lsp'},
-				{'hrsh7th/cmp-buffer'},
-				{'hrsh7th/cmp-path'},
-				{'hrsh7th/cmp-nvim-lua'},
+				{ 'hrsh7th/cmp-nvim-lsp' },
+				{ 'hrsh7th/cmp-buffer' },
+				{ 'hrsh7th/cmp-path' },
+				{ 'hrsh7th/cmp-nvim-lua' },
 			},
 			config = function()
 				local cmp = require('cmp')
 
 				cmp.setup({
 					sources = {
-						{name = 'path'},
-						{name = 'nvim_lsp'},
-						{name = 'buffer', keyword_length = 3},
+						{ name = 'path' },
+						{ name = 'nvim_lsp' },
+						{ name = 'buffer',  keyword_length = 3 },
 					},
 					mapping = cmp.mapping.preset.insert({
 						["<Tab>"] = cmp.mapping.select_next_item(),
 						["<s-Tab>"] = cmp.mapping.select_prev_item(),
-						["<Enter>"] = cmp.mapping.confirm({select = true}),
+						["<Enter>"] = cmp.mapping.confirm({ select = true }),
 					}),
 
 				})
 			end
 		},
 
-		{"neovim/nvim-lspconfig",
+		{
+			"neovim/nvim-lspconfig",
 			config = function()
-
 				-- Add borders to floating windows
 				vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
 					vim.lsp.handlers.hover,
-					{border = 'rounded'}
+					{ border = 'rounded' }
 				)
 				vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
 					vim.lsp.handlers.signature_help,
-					{border = 'rounded'}
+					{ border = 'rounded' }
 				)
 
 				-- Configure error/warnings interface
@@ -168,7 +178,12 @@ require("lazy").setup({
 					signs = {
 						text = {
 							[vim.diagnostic.severity.ERROR] = 'E',
-							[vim.diagnostic.severity.WARN] = 'W', [vim.diagnostic.severity.HINT] = 'H', [vim.diagnostic.severity.INFO] = 'I', }, }, })
+							[vim.diagnostic.severity.WARN] = 'W',
+							[vim.diagnostic.severity.HINT] = 'H',
+							[vim.diagnostic.severity.INFO] = 'I',
+						},
+					},
+				})
 				-- Add cmp_nvim_lsp capabilities settings to lspconfig
 				-- This should be executed before you configure any language server
 
@@ -176,7 +191,7 @@ require("lazy").setup({
 				-- if there is a language server active in the file
 				vim.api.nvim_create_autocmd('LspAttach', {
 					callback = function(event)
-						local opts = {buffer = event.buf}
+						local opts = { buffer = event.buf }
 
 						vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 						vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
@@ -187,7 +202,7 @@ require("lazy").setup({
 						vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 						vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 						vim.keymap.set('n', 'ge', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-						vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
+						vim.keymap.set({ 'n', 'x' }, '<leader>g', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
 						vim.keymap.set('n', 'gA', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 					end,
 				})
@@ -195,7 +210,8 @@ require("lazy").setup({
 		},
 
 
-		{"williamboman/mason.nvim",
+		{
+			"williamboman/mason.nvim",
 			config = function()
 				require("mason").setup()
 			end
@@ -228,15 +244,17 @@ require("lazy").setup({
 			end
 		},
 
-		{"rrethy/vim-illuminate"},
+		{ "rrethy/vim-illuminate" },
 
-		{'kevinhwang91/nvim-fFHighlight',
+		{
+			'kevinhwang91/nvim-fFHighlight',
 			config = function()
 				require('fFHighlight').setup({})
 			end
 		},
 
-		{'numToStr/Comment.nvim',
+		{
+			'numToStr/Comment.nvim',
 			opts = {
 				toggler = {
 

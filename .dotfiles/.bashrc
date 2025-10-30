@@ -16,7 +16,7 @@ f() {
     fi
 }
 fs() {
-	GITPATH=$(find ~ -path "/home/admin/.local/share/nvim/lazy" -prune -o -type d -name .git -exec dirname {} \; | fzf)
+	GITPATH=$(find /home/admin/project -type d -name ".git" -exec dirname {} \; | fzf)
 	if [ -n "$GITPATH" ]; then
 		cd "$GITPATH"
 		nvim "$GITPATH"
