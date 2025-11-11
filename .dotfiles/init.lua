@@ -151,6 +151,7 @@ require("lazy").setup({
 			end
 		},
 
+
 		{
 			"neovim/nvim-lspconfig",
 			config = function()
@@ -198,7 +199,7 @@ require("lazy").setup({
 						vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
 						vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
 						vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-						vim.keymap.set('n', 'gf', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+						vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
 						vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 						vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
 						vim.keymap.set('n', 'ge', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
