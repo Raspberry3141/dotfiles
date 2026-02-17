@@ -18,6 +18,8 @@ bindsym $mod+shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym F10 exec maim ~/recentScreenshot.png
 
+exec feh --bg-scale ~/.config/i3/land.jpg
+
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #808080   #808080
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
@@ -122,7 +124,7 @@ bindsym $mod+Control+0 move container to workspace number $ws10
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit 
 # bindsym $mod+Shift+l exec --no-startup-id i3lock
-bindsym $mod+Shift+h exec systemctl hibernate
+bindsym $mod+Shift+p exec systemctl hibernate
 
 bindsym $mod+Control+$left       resize shrink width 10 px or 10 ppt
 bindsym $mod+Control+$down       resize shrink height 10 px or 10 ppt
