@@ -16,7 +16,7 @@ bindsym XF86MonBrightnessDown exec "brightnessctl set 2%-";
 bindsym $mod+Control+space focus mode_toggle
 bindsym $mod+shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
-bindsym F10 exec maim ~/recentScreenshot.png
+bindsym F10 exec maim ~/screenshot.png
 
 exec feh --bg-scale ~/.config/i3/land.jpg
 

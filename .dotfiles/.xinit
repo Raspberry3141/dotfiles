@@ -1,5 +1,4 @@
 [[  -f ~/.Xresources  ]] && xrdb -merge -I$HOME ~/.Xresources
-test -f ~/.Xkeymap && xkbcomp ~/.Xkeymap $DISPLAY
 exec i3
 set r rate 200 25
 udiskie &
