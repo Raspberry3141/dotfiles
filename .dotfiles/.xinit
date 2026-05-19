@@ -3,4 +3,4 @@ exec i3
 set r rate 200 25
 xmodmap ~/.Xmodmap
 xmodmap -e "remove mod1 = Left"
-udiskie &
+~/scripts/reloadxinit.sh
